@@ -1,0 +1,49 @@
+{
+  "account_types": {
+    "business_current_account": {
+      "monthly_fee": "R95-R295",
+      "features": [
+        "Online banking",
+        "Debit card",
+        "Cheque book",
+        "Monthly statements"
+      ]
+    },
+    "business_savings_account": {
+      "interest_rate": "Variable",
+      "minimum_balance": "R1,000",
+      "features": [
+        "Interest earning",
+        "Online access",
+        "Limited transactions"
+      ]
+    }
+  },
+  "required_documents": [
+    "Company registration certificate (CM1)",
+    "Memorandum of incorporation",
+    "CIPC certificate of incorporation",
+    "Tax clearance certificate",
+    "Director ID documents",
+    "Proof of business address",
+    "Bank resolution (board resolution)",
+    "FICA documents for all directors"
+  ],
+  "merchant_services": {
+    "card_processing": {
+      "setup_fee": "R0-R500",
+      "transaction_fees": "2.5%-3.5%",
+      "settlement": "T+1 or T+2"
+    },
+    "online_payments": {
+      "payfast_integration": "2.9% + R2.00 per transaction",
+      "fnb_pay": "Integrated payment solution",
+      "recurring_billing": "Available for subscriptions"
+    }
+  },
+  "international_payments": {
+    "swift_transfers": "Available for international payments",
+    "foreign_exchange": "Competitive rates",
+    "multi_currency": "USD, EUR, GBP accounts available"
+  }
+}

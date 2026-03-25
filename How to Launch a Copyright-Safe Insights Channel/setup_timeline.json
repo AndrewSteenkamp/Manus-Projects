@@ -1,0 +1,64 @@
+{
+  "week_1": {
+    "days_1_2": {
+      "tasks": [
+        "Reserve company name with CIPC",
+        "Prepare incorporation documents",
+        "Gather director information and documents"
+      ],
+      "deadline": "2025-09-13",
+      "estimated_cost": "R50"
+    },
+    "days_3_5": {
+      "tasks": [
+        "Submit incorporation application",
+        "Pay incorporation fees",
+        "Wait for CIPC processing"
+      ],
+      "deadline": "2025-09-16",
+      "estimated_cost": "R175"
+    },
+    "days_6_7": {
+      "tasks": [
+        "Receive company registration certificate",
+        "Begin SARS tax registration",
+        "Prepare banking documents"
+      ],
+      "deadline": "2025-09-18",
+      "estimated_cost": "R0"
+    }
+  },
+  "week_2": {
+    "days_8_10": {
+      "tasks": [
+        "Complete SARS registration",
+        "Apply for VAT registration (if applicable)",
+        "Schedule FNB banking appointment"
+      ],
+      "deadline": "2025-09-21",
+      "estimated_cost": "R0"
+    },
+    "days_11_14": {
+      "tasks": [
+        "Open FNB business account",
+        "Set up merchant services",
+        "Configure online banking",
+        "Obtain tax clearance certificate"
+      ],
+      "deadline": "2025-09-25",
+      "estimated_cost": "R500-R1000"
+    }
+  },
+  "week_3": {
+    "days_15_21": {
+      "tasks": [
+        "Set up payment processing",
+        "Configure international payment solutions",
+        "Implement compliance systems",
+        "Begin business operations"
+      ],
+      "deadline": "2025-10-02",
+      "estimated_cost": "R1000-R2000"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "step_1_name_reservation": {
+    "form": "CoR 9.1 - Application for reservation of name",
+    "fee": "R50",
+    "processing_time": "1-2 business days",
+    "required_documents": [
+      "Proposed company name",
+      "Alternative names (2-3 options)",
+      "Applicant details"
+    ]
+  },
+  "step_2_company_incorporation": {
+    "form": "CoR 14.1 - Notice of incorporation",
+    "fee": "R175",
+    "processing_time": "5-10 business days",
+    "required_documents": [
+      "Memorandum of Incorporation",
+      "Notice of incorporation (CoR 14.1)",
+      "Notice of appointment of directors (CoR 14.2)",
+      "Consent to appointment as director (CoR 14.3)",
+      "Proof of payment"
+    ]
+  },
+  "step_3_post_incorporation": {
+    "requirements": [
+      "Obtain company registration certificate",
+      "Open company bank account",
+      "Register for tax with SARS",
+      "Obtain tax clearance certificate"
+    ]
+  }
+}

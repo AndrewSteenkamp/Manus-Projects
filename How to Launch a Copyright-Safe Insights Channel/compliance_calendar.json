@@ -1,0 +1,46 @@
+{
+  "monthly_obligations": {
+    "vat_returns": {
+      "due_date": "25th of following month",
+      "penalty": "10% of tax due",
+      "requirement": "If VAT registered"
+    },
+    "paye_submissions": {
+      "due_date": "7th of following month",
+      "penalty": "10% of tax due",
+      "requirement": "If employing staff"
+    },
+    "uif_contributions": {
+      "due_date": "7th of following month",
+      "penalty": "10% of contribution due",
+      "requirement": "If employing staff"
+    }
+  },
+  "annual_obligations": {
+    "annual_return_cipc": {
+      "due_date": "Anniversary of incorporation",
+      "fee": "R350",
+      "penalty": "R50 per month late"
+    },
+    "income_tax_return": {
+      "due_date": "31 October (companies)",
+      "penalty": "R250 per month late",
+      "requirement": "All companies"
+    },
+    "financial_statements": {
+      "due_date": "With annual return",
+      "requirement": "All companies",
+      "audit_threshold": "R10 million revenue"
+    }
+  },
+  "quarterly_obligations": {
+    "provisional_tax": {
+      "due_dates": [
+        "31 August",
+        "28 February"
+      ],
+      "penalty": "20% per annum interest",
+      "requirement": "If tax liability > R1,000"
+    }
+  }
+}

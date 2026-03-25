@@ -1,0 +1,81 @@
+{
+  "local_south_african": {
+    "payfast": {
+      "description": "Leading SA payment gateway",
+      "fees": "2.9% + R2.00 per transaction",
+      "supported_methods": [
+        "Credit cards",
+        "EFT",
+        "Bitcoin"
+      ],
+      "integration": "API, plugins available",
+      "settlement": "T+1"
+    },
+    "fnb_merchant_services": {
+      "description": "Direct bank integration",
+      "fees": "2.5%-3.5% depending on volume",
+      "supported_methods": [
+        "Credit cards",
+        "Debit cards"
+      ],
+      "integration": "POS, online gateway",
+      "settlement": "T+1 or T+2"
+    },
+    "paygate": {
+      "description": "Established payment processor",
+      "fees": "2.8% + R1.50 per transaction",
+      "supported_methods": [
+        "Cards",
+        "EFT",
+        "Mobile payments"
+      ],
+      "integration": "API, hosted pages",
+      "settlement": "T+1"
+    }
+  },
+  "international_solutions": {
+    "stripe": {
+      "description": "Global payment platform",
+      "fees": "2.9% + $0.30 per transaction",
+      "supported_methods": [
+        "Cards",
+        "Digital wallets",
+        "Bank transfers"
+      ],
+      "integration": "Comprehensive API",
+      "settlement": "T+2",
+      "note": "Requires Stripe Atlas for SA businesses"
+    },
+    "wise_business": {
+      "description": "Multi-currency business account",
+      "fees": "0.5%-2% depending on currency",
+      "supported_currencies": "50+ currencies",
+      "integration": "API, direct transfers",
+      "settlement": "Instant to T+1"
+    },
+    "payoneer": {
+      "description": "Global payment platform",
+      "fees": "1%-3% depending on method",
+      "supported_methods": [
+        "Bank transfers",
+        "Cards",
+        "Digital wallets"
+      ],
+      "integration": "API, mass payouts",
+      "settlement": "T+1 to T+3"
+    }
+  },
+  "cryptocurrency": {
+    "luno_business": {
+      "description": "SA-based crypto exchange",
+      "fees": "1% trading fee",
+      "supported_currencies": [
+        "Bitcoin",
+        "Ethereum",
+        "XRP"
+      ],
+      "integration": "API available",
+      "compliance": "SARB compliant"
+    }
+  }
+}

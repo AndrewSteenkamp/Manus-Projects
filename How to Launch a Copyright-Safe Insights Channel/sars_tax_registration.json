@@ -1,0 +1,39 @@
+{
+  "income_tax": {
+    "form": "IT77 - Application for registration",
+    "deadline": "Within 21 days of incorporation",
+    "required_documents": [
+      "Company registration certificate",
+      "Memorandum of incorporation",
+      "Banking details",
+      "Director ID copies",
+      "Proof of address"
+    ]
+  },
+  "vat_registration": {
+    "threshold": "R1,000,000 annual turnover",
+    "form": "VAT101 - Application for VAT registration",
+    "voluntary_registration": "Available if turnover < R1M",
+    "benefits": [
+      "Claim input VAT on business expenses",
+      "Professional credibility",
+      "Required for many B2B transactions"
+    ]
+  },
+  "paye_registration": {
+    "required_if": "Employing staff or paying salaries",
+    "form": "EMP101 - Employer registration",
+    "deadline": "Before first salary payment",
+    "obligations": [
+      "Monthly PAYE submissions",
+      "Annual reconciliation",
+      "Employee tax certificates"
+    ]
+  },
+  "uif_registration": {
+    "purpose": "Unemployment Insurance Fund",
+    "rate": "2% of gross salary (1% employee, 1% employer)",
+    "form": "UI-19 - Application for registration",
+    "deadline": "Within 7 days of first employee"
+  }
+}
