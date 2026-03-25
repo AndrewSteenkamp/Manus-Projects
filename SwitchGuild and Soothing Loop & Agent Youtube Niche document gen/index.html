@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Niche Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .step h2 {
+            color: #555;
+            margin-top: 0;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8d7da;
+            border-radius: 5px;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+        .niche-suggestion {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .niche-suggestion h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .product-offer {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .product-offer h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Niche Agent</h1>
+        <p style="text-align: center; color: #666;">Discover profitable YouTube niches based on your hobbies and get a complete guide to start your channel!</p>
+        
+        <!-- Step 1: Hobby Input -->
+        <div class="step">
+            <h2>Step 1: Tell us about your hobby</h2>
+            <input type="text" id="hobbyInput" placeholder="Enter your hobby (e.g., baking, gaming, gardening)">
+            <button onclick="suggestNiches()">Get Niche Suggestions</button>
+            <div id="nicheResults"></div>
+        </div>
+        
+        <!-- Step 2: Lead Capture -->
+        <div class="step">
+            <h2>Step 2: Get your free YouTube Niche Checklist</h2>
+            <input type="email" id="emailInput" placeholder="Enter your email address">
+            <button onclick="captureEmail()">Get Free Checklist</button>
+            <div id="leadResults"></div>
+        </div>
+        
+        <!-- Step 3: Product Offers -->
+        <div class="step">
+            <h2>Step 3: Get your complete YouTube success guide</h2>
+            <div class="product-offer">
+                <h3>🎯 Complete Guide to Starting Your YouTube Channel</h3>
+                <p>Get a comprehensive, step-by-step guide that covers everything from channel setup to monetization strategies.</p>
+                <div class="price">$29.99</div>
+                <button onclick="purchaseProduct('document')">Get the Guide Now</button>
+            </div>
+            
+            <div class="product-offer" style="margin-top: 15px;">
+                <h3>🚀 Automated Guideline Product (Premium)</h3>
+                <p>Everything in the guide PLUS automation tools, templates, and scripts to accelerate your channel growth.</p>
+                <div class="price">$99.99</div>
+                <button onclick="purchaseProduct('automated_guideline')">Get Premium Package</button>
+            </div>
+            <div id="purchaseResults"></div>
+        </div>
+    </div>
+
+    <script>
+        async function suggestNiches() {
+            const hobby = document.getElementById('hobbyInput').value.trim();
+            const resultsDiv = document.getElementById('nicheResults');
+            
+            if (!hobby) {
+                resultsDiv.innerHTML = '<div class="error">Please enter a hobby first.</div>';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/suggest-niches', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ hobby: hobby })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    let html = '<div class="results"><h3>Suggested Niches for "' + hobby + '":</h3>';
+                    data.suggestions.forEach(suggestion => {
+                        html += `
+                            <div class="niche-suggestion">
+                                <h3>${suggestion.name}</h3>
+                                <p><strong>Description:</strong> ${suggestion.description}</p>
+                                <p><strong>Potential:</strong> ${suggestion.potential}</p>
+                                <p><strong>Competition:</strong> ${suggestion.competition}</p>
+                                <p><strong>Monetization:</strong> ${suggestion.monetization}</p>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    resultsDiv.innerHTML = html;
+                } else {
+                    resultsDiv.innerHTML = '<div class="error">Error: ' + data.error + '</div>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+        
+        async function captureEmail() {
+            const email = document.getElementById('emailInput').value.trim();
+            const hobby = document.getElementById('hobbyInput').value.trim();
+            const resultsDiv = document.getElementById('leadResults');
+            
+            if (!email) {
+                resultsDiv.innerHTML = '<div class="error">Please enter your email address.</div>';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/capture-lead', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email, hobby: hobby })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultsDiv.innerHTML = '<div class="results">✅ ' + data.message + '<br>📧 ' + data.lead_magnet + '</div>';
+                } else {
+                    resultsDiv.innerHTML = '<div class="error">Error: ' + data.error + '</div>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+        
+        async function purchaseProduct(productType) {
+            const email = document.getElementById('emailInput').value.trim();
+            const resultsDiv = document.getElementById('purchaseResults');
+            
+            if (!email) {
+                resultsDiv.innerHTML = '<div class="error">Please enter your email address first.</div>';
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/purchase-product', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        product_type: productType, 
+                        email: email,
+                        payment_info: { method: 'demo' }
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    let html = '<div class="results">✅ ' + data.message + '<br>';
+                    html += '📦 Product: ' + data.product.name + '<br>';
+                    html += '💰 Price: $' + data.product.price + '<br>';
+                    html += '📧 ' + data.delivery_status + '</div>';
+                    
+                    if (data.upsell_available) {
+                        html += '<div class="results" style="margin-top: 10px;">🎁 Special Offer: Upgrade to our Premium Package for additional tools and templates!</div>';
+                    }
+                    
+                    resultsDiv.innerHTML = html;
+                } else {
+                    resultsDiv.innerHTML = '<div class="error">Error: ' + data.error + '</div>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Error: ' + error.message + '</div>';
+            }
+        }
+    </script>
+</body>
+</html>
+

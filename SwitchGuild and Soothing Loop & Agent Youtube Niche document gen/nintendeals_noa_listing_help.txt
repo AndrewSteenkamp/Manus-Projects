@@ -1,0 +1,34 @@
+Help on module nintendeals.noa.listing in nintendeals.noa:
+
+NAME
+    nintendeals.noa.listing
+
+FUNCTIONS
+    list_games(platform: nintendeals.commons.enumerates.Platforms) -> Iterator[nintendeals.commons.classes.games.Game]
+    
+    list_switch_games() -> Iterator[nintendeals.commons.classes.games.Game]
+        Get a list of Nintendo Switch games for the NA region.
+        
+        Note: game.product_code is unavailable with this method, to get it use the
+        method noa.game_info(nsuid).
+        
+        Available Features
+        ------------------
+            * DEMO
+            * GAME_VOUCHER
+            * ONLINE_PLAY
+            * SAVE_DATA_CLOUD
+        
+        Yields
+        -------
+        nintendeals.classes.common.Game:
+            Information of a game.
+
+DATA
+    Iterator = typing.Iterator
+        A generic version of collections.abc.Iterator.
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/noa/listing.py
+
+

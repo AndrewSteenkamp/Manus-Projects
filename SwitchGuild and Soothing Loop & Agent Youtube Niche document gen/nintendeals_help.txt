@@ -1,0 +1,16 @@
+Help on package nintendeals:
+
+NAME
+    nintendeals
+
+PACKAGE CONTENTS
+    api (package)
+    commons (package)
+    noa (package)
+    noe (package)
+    noj (package)
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/__init__.py
+
+

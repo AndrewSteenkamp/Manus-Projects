@@ -1,0 +1,12 @@
+Help on package nintendeals.noa.api in nintendeals.noa:
+
+NAME
+    nintendeals.noa.api
+
+PACKAGE CONTENTS
+    algolia
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/noa/api/__init__.py
+
+

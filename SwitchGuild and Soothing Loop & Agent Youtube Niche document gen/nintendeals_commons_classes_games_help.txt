@@ -1,0 +1,90 @@
+Help on module nintendeals.commons.classes.games in nintendeals.commons.classes:
+
+NAME
+    nintendeals.commons.classes.games
+
+CLASSES
+    builtins.object
+        Game
+    
+    class Game(builtins.object)
+     |  Game(platform: nintendeals.commons.enumerates.Platforms, region: nintendeals.commons.enumerates.Regions, title: str, nsuid: str = None, product_code: str = None)
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, platform: nintendeals.commons.enumerates.Platforms, region: nintendeals.commons.enumerates.Regions, title: str, nsuid: str = None, product_code: str = None)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |  
+     |  __repr__(self)
+     |      Return repr(self).
+     |  
+     |  price(self, country: str) -> nintendeals.commons.classes.prices.Price
+     |  
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |  
+     |  eshop
+     |  
+     |  unique_id
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+DATA
+    Dict = typing.Dict
+        A generic version of dict.
+    
+    ESHOPS = {<Regions.EU: 'EU'>: <class 'nintendeals.commons.classes.esho...
+    List = typing.List
+        A generic version of list.
+    
+    Optional = typing.Optional
+        Optional type.
+        
+        Optional[X] is equivalent to Union[X, None].
+    
+    Tuple = typing.Tuple
+        Tuple type; Tuple[X, Y] is the cross-product type of X and Y.
+        
+        Example: Tuple[T1, T2] is a tuple of two elements corresponding
+        to type variables T1 and T2.  Tuple[int, float, str] is a tuple
+        of an int, a float and a string.
+        
+        To specify a variable-length tuple of homogeneous type, use Tuple[T, ...].
+    
+    Union = typing.Union
+        Union type; Union[X, Y] means either X or Y.
+        
+        To define a union, use e.g. Union[int, str].  Details:
+        - The arguments must be types and there must be at least one.
+        - None as an argument is a special case and is replaced by
+          type(None).
+        - Unions of unions are flattened, e.g.::
+        
+            Union[Union[int, str], float] == Union[int, str, float]
+        
+        - Unions of a single argument vanish, e.g.::
+        
+            Union[int] == int  # The constructor actually returns int
+        
+        - Redundant arguments are skipped, e.g.::
+        
+            Union[int, str, int] == Union[int, str]
+        
+        - When comparing unions, the argument order is ignored, e.g.::
+        
+            Union[int, str] == Union[str, int]
+        
+        - You cannot subclass or instantiate a union.
+        - You can use Optional[X] as a shorthand for Union[X, None].
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/commons/classes/games.py
+
+

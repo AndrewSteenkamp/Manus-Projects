@@ -1,0 +1,17 @@
+Help on package nintendeals.noa in nintendeals:
+
+NAME
+    nintendeals.noa
+
+PACKAGE CONTENTS
+    api (package)
+    info
+    listing
+    scrapers (package)
+    search
+    util
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/noa/__init__.py
+
+

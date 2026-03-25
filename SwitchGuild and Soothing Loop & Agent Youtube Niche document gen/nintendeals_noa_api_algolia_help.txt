@@ -1,0 +1,32 @@
+Help on module nintendeals.noa.api.algolia in nintendeals.noa.api:
+
+NAME
+    nintendeals.noa.api.algolia
+
+FUNCTIONS
+    search_by_nsuid(nsuid: str) -> Optional[dict]
+    
+    search_by_platform(platform: nintendeals.commons.enumerates.Platforms) -> Iterator[dict]
+    
+    search_by_query(query: str, platform: nintendeals.commons.enumerates.Platforms = None) -> Iterator[dict]
+
+DATA
+    API_KEY = 'a29c6927638bfd8cee23993e51e721c9'
+    APP_ID = 'U3B6GR4UA3'
+    INDEX = None
+    INDEX_NAME = 'store_game_en_us'
+    Iterator = typing.Iterator
+        A generic version of collections.abc.Iterator.
+    
+    Optional = typing.Optional
+        Optional type.
+        
+        Optional[X] is equivalent to Union[X, None].
+    
+    PLATFORMS = {<Platforms.NINTENDO_SWITCH: 'Nintendo Switch'>: 'Nintendo...
+    PLATFORM_CODES = {<Platforms.NINTENDO_SWITCH: 'Nintendo Switch'>: '700...
+
+FILE
+    /usr/local/lib/python3.11/dist-packages/nintendeals/noa/api/algolia.py
+
+
