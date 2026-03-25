@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "input": "DeepConceptualUnderstanding.md",
+      "output": {},
+      "error": "The YouTube video script at '/home/ubuntu/youtube_channel/scripts/DeepConceptualUnderstanding.md' is empty. Cannot generate metadata based on an empty script."
+    },
+    {
+      "input": "EmotionalIntelligence.md",
+      "output": {},
+      "error": "The YouTube video script at '/home/ubuntu/youtube_channel/scripts/EmotionalIntelligence.md' is empty. Cannot generate metadata without content."
+    },
+    {
+      "input": "MindfulnessMastery.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path(1)/2_d1mCFUpvKhCAhsim5UAium_1771827124583_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9NaW5kZnVsbmVzc01hc3Rlcnk.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "PersonalGrowth.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path(1)/3_h7rb8ItDlr6s6nmH9yp9mj_1771827147137_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9QZXJzb25hbEdyb3d0aA.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "SelfAwareness.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path(1)/4_zDbrUlAdccs0QbxIxV94DS_1771827125752_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9TZWxmQXdhcmVuZXNz.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "StrategicThinking.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path(1)/5_RSeKXuQJeKcD2Ir03xxROs_1771827225212_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9TdHJhdGVnaWNUaGlua2luZw.json"
+      },
+      "error": ""
+    }
+  ]
+}

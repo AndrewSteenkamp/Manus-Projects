@@ -1,0 +1,251 @@
+Developing Strategic and Critical Thinking for Solving Complex Problems
+
+Align innovation with ethics.
+Propose a breakthrough innovation in [industry], ensuring it aligns with ethical standards and addresses unintended consequences.
+
+ 
+
+Analyze dilemmas through ethical frameworks.
+You are faced with the following ethical dilemma: [describe dilemma]. How would you resolve it? Justify your approach by referencing ethical principles or frameworks.
+
+ 
+
+Analyze systems as interrelated parts.
+Apply systems thinking to explain the interdependencies within [complex system or issue]. Highlight feedback loops and leverage points.
+
+ 
+
+Apply behavioral insights to real decisions.
+Apply behavioral economics principles (e.g., nudging, loss aversion) to improve decision-making in [area].
+
+ 
+
+Apply this to forecast and manage risks systematically.
+Identify potential risks involved in [defined decision or project]. Categorize them by likelihood and impact, and recommend mitigation strategies with rational prioritization.
+
+ 
+
+Audit decision-making through an ethical lens.
+Design an ethical audit framework for assessing the decision-making processes within [organization or project].
+
+ 
+
+Blend knowledge across disciplines.
+How can knowledge from [discipline A] and [discipline B] be combined to solve [specific multidimensional challenge]? Provide a concrete example or framework.
+
+ 
+
+Break complex problems into manageable units.
+Break down the complex problem of [insert problem] into manageable components. Describe a structured plan to address each part step-by-step.
+
+ 
+
+Build logical arguments for both sides of an issue.
+Prepare structured arguments both in favor of and against [controversial issue]. Ensure clarity, logical consistency, and awareness of counterarguments.
+
+ 
+
+Compare costs and benefits for sound judgment.
+Perform a detailed cost-benefit analysis of [option or strategy], considering short-term vs. long-term trade-offs and qualitative vs. quantitative factors.
+
+ 
+
+Compare strategies side-by-side.
+Compare and contrast two alternative approaches to [challenge]. Evaluate each based on feasibility, risk, and long-term value.
+
+ 
+
+Connect theory to practice.
+Use [specific theory or model] to explain or predict outcomes in [real-world situation]. Clarify how the theory maps to the elements of the scenario.
+
+ 
+
+Constructively evaluate a peer’s solution.
+Review and critique a peer’s proposed solution to [specific challenge]. Offer constructive feedback and suggest a refined or alternative approach.
+
+ 
+
+Contrast leadership styles in practice.
+Compare two leadership styles (e.g., transformational vs. transactional) and evaluate which is more effective in [defined situation].
+
+ 
+
+Design scalable and functional systems.
+Design an efficient and scalable system to manage [specific process or task]. Outline key components, workflows, and how it addresses core pain points.
+
+ 
+
+Diagnose root causes of persistent issues.
+Use root cause analysis (e.g., "5 Whys", Ishikawa diagram) to identify the underlying cause of [persistent problem]. Suggest actionable next steps.
+
+ 
+
+Draft thoughtful public or private sector policies.
+Recommend a practical, evidence-based policy to address [systemic issue]. Describe expected benefits, potential drawbacks, and implementation considerations.
+
+ 
+
+Evaluate broader consequences of new developments.
+Evaluate the short- and long-term impact of [innovation, disruption, or policy] on [target industry, group, or environment]. Consider both intended and unintended effects.
+
+ 
+
+Evaluate long-term consequences of actions or policies.
+Analyze the potential long-term consequences of [policy, decision, or innovation] on [specific sector or population]. Address economic, social, and environmental dimensions.
+
+ 
+
+Evaluate scenarios using game theory.
+Analyze [competitive or cooperative situation] using principles of game theory. Identify dominant strategies and likely outcomes.
+
+ 
+
+Explore ethical reasoning paths.
+. Compare the decisions each framework would lead to.
+
+ 
+
+Forecast outcomes based on current data.
+Based on current trends and data, predict the future development of [industry, technology, or behavior]. Justify your forecast with assumptions and references.
+
+ 
+
+For structured and rational decision-making under complexity.
+Explain your decision-making framework for addressing [complex scenario]. Highlight the factors you would consider, and walk through the steps to reach a sound conclusion.
+
+ 
+
+Great for design-thinking or lateral ideation.
+Apply a structured creative method (e.g., SCAMPER, lateral thinking) to reimagine a solution for [well-known challenge]. Document each stage of your ideation process.
+
+ 
+
+Great for idea generation and out-of-the-box thinking.
+Propose a novel, creative solution to [widespread challenge]. Explain how it improves upon existing approaches and assess its feasibility and scalability.
+
+ 
+
+Guide organizational change with strategy.
+Design a change management plan to support the implementation of [organizational or strategic shift]. Include communication, resistance handling, and success tracking.
+
+ 
+
+Helps critically assess an existing approach to highlight improvements.
+Critically assess the effectiveness of [specific method or approach] within [given scenario]. Analyze strengths, weaknesses, assumptions, and provide reasoned alternatives.
+
+ 
+
+Ideal for outlining detailed, multi-stakeholder strategies with measurable goals.
+Develop a comprehensive strategic plan to address [defined issue] in [particular context]. Include clear objectives, key milestones, involved stakeholders, risks, and measurable success criteria.
+
+ 
+
+Identify and counter cognitive bias.
+Identify potential cognitive or systemic biases in the analysis or decision-making process for [specific situation]. Suggest techniques to minimize them.
+
+ 
+
+Justify major strategic pivots.
+Justify a strategic pivot for an organization facing [external pressure or internal failure]. Present data-driven reasoning.
+
+ 
+
+Lead through crisis simulation.
+You are in charge during a crisis: [brief description]. How do you stabilize the situation, communicate with stakeholders, and ensure long-term recovery?
+
+ 
+
+Learn from failure systematically.
+Conduct a failure analysis for [project or initiative that failed]. Identify lessons learned and how they can guide future action.
+
+ 
+
+Leverage AI for better decisions.
+How can AI be ethically and effectively used to support decision-making in [domain]? Address benefits, risks, and oversight mechanisms.
+
+ 
+
+Make sound decisions under uncertainty.
+In a high-uncertainty context such as [describe], describe tools and principles for making resilient decisions.
+
+ 
+
+Map influence and interest of key players.
+Create a stakeholder map for [initiative or change process]. Identify their interests, influence, and the best engagement strategy.
+
+ 
+
+Measure complex systems wisely.
+Design appropriate metrics to monitor and evaluate the success of [complex system or initiative]. Ensure they capture meaningful insights.
+
+ 
+
+Negotiate under complexity.
+You must negotiate a multi-stakeholder agreement on [issue]. How would you align diverging interests and reach a compromise?
+
+ 
+
+Practice leadership in high-stakes situations.
+As a leader facing [specific crisis or challenge], describe how you would navigate it. Address communication, decision-making, and stakeholder management.
+
+ 
+
+Prepare for multiple future states.
+Develop three future scenarios for [context: e.g., a city's infrastructure in 2040] and explain how an organization could prepare for each.
+
+ 
+
+Prioritize and justify resource use.
+Devise a resource allocation strategy for [defined scenario] to maximize impact and efficiency. Justify your priorities and trade-offs.
+
+ 
+
+Prioritize decisions using matrix logic.
+Use a decision-priority matrix (e.g., Eisenhower, Impact/Effort) to rank and justify competing tasks or options in [real project].
+
+ 
+
+Provide critical review of methodologies or frameworks.
+Write a balanced critical review of [specific methodology, policy, or model] used in [industry or domain]. Include supporting data or examples.
+
+ 
+
+Reflect deeply on learning from experience.
+Reflect on a real decision or experience you’ve had that involved complexity. What would you do differently based on what you’ve learned since?
+
+ 
+
+Spot flawed logic and correct it.
+Identify common heuristics or logical fallacies that may distort thinking in [scenario]. Suggest corrections.
+
+ 
+
+Use for structured analysis of complex future situations.
+Given this scenario — [describe scenario] — identify key variables, underlying issues, and possible outcomes. Recommend the most effective response strategy.
+
+ 
+
+Useful for building structured hypothesis testing plans.
+Formulate a testable hypothesis regarding [specific phenomenon]. Design a valid research approach with variables, data sources, and expected outcomes to confirm or reject the hypothesis.
+
+ 
+
+Use mental models to think clearly.
+Apply mental models (e.g., first principles, inversion, second-order thinking) to reason through [specific decision].
+
+ 
+
+Use this to structure a logical, justified solution to a real-world issue.
+Propose a clear, step-by-step solution to [specific, real-world problem], leveraging your expertise in [relevant domain or framework]. Justify each step with logical reasoning or supporting evidence.
+
+ 
+
+View an issue from two opposing lenses.
+Explore [topic or issue] from two fundamentally different perspectives. Analyze how each viewpoint influences the interpretation of facts and the resulting conclusions.
+
+ 
+
+Weigh tough trade-offs.
+What trade-offs would you accept in [scenario: e.g., product design, public health policy]? Justify your rationale.
+
+ 

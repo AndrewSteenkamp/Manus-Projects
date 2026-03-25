@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "input": "AdvancedTimeManagement.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/0_IKQAY0fqI3wWDDRNkH16wI_1771826832449_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9BZHZhbmNlZFRpbWVNYW5hZ2VtZW50.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "CreativeImagination.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/1_KGleKbIPzvg5aspsQ2PISH_1771826837414_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9DcmVhdGl2ZUltYWdpbmF0aW9u.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "DeepConceptualUnderstanding.md",
+      "output": {},
+      "error": "The script file at /home/ubuntu/youtube_channel/scripts/DeepConceptualUnderstanding.md is empty. Cannot generate metadata without content."
+    },
+    {
+      "input": "EmotionalIntelligence.md",
+      "output": {},
+      "error": "The script file '/home/ubuntu/youtube_channel/scripts/EmotionalIntelligence.md' is empty. Cannot generate metadata without script content."
+    },
+    {
+      "input": "MetacognitiveReflection.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/4_0IDajMJyOfmodvGLlwnkVs_1771826852675_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9NZXRhY29nbml0aXZlUmVmbGVjdGlvbg.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "MindfulnessMastery.md",
+      "output": {},
+      "error": "The script file at /home/ubuntu/youtube_channel/scripts/MindfulnessMastery.md is empty. Please provide a script with content."
+    },
+    {
+      "input": "PersonalGrowth.md",
+      "output": {},
+      "error": "The script file at /home/ubuntu/youtube_channel/scripts/PersonalGrowth.md is empty. Cannot generate metadata from an empty script."
+    },
+    {
+      "input": "SelfAwareness.md",
+      "output": {},
+      "error": "The script file at /home/ubuntu/youtube_channel/scripts/SelfAwareness.md is empty, so YouTube video metadata cannot be generated based on its content."
+    },
+    {
+      "input": "StrategicLeadership.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/8_QAg5itapLKy5VflzBlwfaN_1771826854424_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9TdHJhdGVnaWNMZWFkZXJzaGlw.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "StrategicThinking.md",
+      "output": {},
+      "error": "The script file '/home/ubuntu/youtube_channel/scripts/StrategicThinking.md' is empty. Cannot generate metadata from an empty script."
+    },
+    {
+      "input": "SustainableHealthHabits.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/10_ppDf5qdfrz1QDWdbpIA0M1_1771826827821_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9TdXN0YWluYWJsZUhlYWx0aEhhYml0cw.json"
+      },
+      "error": ""
+    },
+    {
+      "input": "SustainingMotivation.md",
+      "output": {
+        "metadata_file_path": "/home/ubuntu/metadata_file_path/11_u08dIosZFkg2uvOgxB1Ia1_1771826915690_na1fn_L2hvbWUvdWJ1bnR1L3lvdXR1YmVfY2hhbm5lbC9tZXRhZGF0YS9TdXN0YWluaW5nTW90aXZhdGlvbg.json"
+      },
+      "error": ""
+    }
+  ]
+}
