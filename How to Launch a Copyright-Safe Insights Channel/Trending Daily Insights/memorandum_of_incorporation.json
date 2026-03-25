@@ -1,0 +1,24 @@
+{
+  "company_name": "Trending Daily Insights (Pty) Ltd",
+  "company_type": "Private Company",
+  "main_business": "Digital media production and geopolitical analysis",
+  "authorized_shares": 1000,
+  "share_value": "R1.00",
+  "directors": [
+    {
+      "name": "[DIRECTOR_NAME]",
+      "id_number": "[ID_NUMBER]",
+      "address": "[DIRECTOR_ADDRESS]",
+      "nationality": "South African"
+    }
+  ],
+  "registered_address": "[BUSINESS_ADDRESS]",
+  "postal_address": "[POSTAL_ADDRESS]",
+  "business_activities": [
+    "Digital content creation",
+    "Geopolitical analysis and commentary",
+    "Online media publishing",
+    "Educational content production",
+    "Consulting services"
+  ]
+}

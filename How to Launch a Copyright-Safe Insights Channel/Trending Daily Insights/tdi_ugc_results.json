@@ -1,0 +1,107 @@
+{
+  "project_id": "tdi_project_1756462158",
+  "client_name": "Trending Daily Insights",
+  "product_name": "Trending Daily Insights YouTube Channel",
+  "category": "education",
+  "research_data": {
+    "pain_points": [
+      "Overwhelmed by conflicting news sources",
+      "Can't find unbiased geopolitical analysis",
+      "Need expert insights on global events",
+      "Want daily updates without the noise",
+      "Struggling to understand complex international relations"
+    ],
+    "customer_quotes": [
+      "Finally found a channel that explains geopolitics clearly",
+      "This is the only news analysis I trust",
+      "Saves me hours of research every day",
+      "The AI-generated insights are incredibly accurate",
+      "My go-to source for understanding world events"
+    ],
+    "common_language": [
+      "expert analysis",
+      "unbiased",
+      "clear explanations",
+      "daily insights",
+      "trustworthy"
+    ],
+    "category_benefits": [
+      "Expert-level analysis",
+      "Daily consistency",
+      "Unbiased perspective",
+      "Time-saving"
+    ],
+    "detected_category": "education"
+  },
+  "scripts": [
+    "Tired of biased news? I was drowning in conflicting reports until I found Trending Daily Insights. Their AI-powered geopolitical analysis cuts through the noise and gives me the real story every single day. Finally, news I can trust! Subscribe now for daily expert insights.",
+    "As a busy professional, I don't have time to research every global event. That's why I love Trending Daily Insights - they deliver expert-level geopolitical analysis in just 10 minutes daily. It's like having a personal foreign policy advisor! Check them out now.",
+    "I used to feel lost trying to understand world events. Then I discovered Trending Daily Insights. Their AI-generated analysis makes complex geopolitics actually understandable. Now I'm the most informed person in my office! Subscribe for daily insights.",
+    "Stop getting your news from biased sources! Trending Daily Insights uses AI to deliver objective geopolitical analysis every single day. No agenda, no spin - just the facts and expert insights you need. Join 2,000+ subscribers who trust TDI!",
+    "Want to understand what's really happening in the world? Trending Daily Insights breaks down complex geopolitical events into clear, actionable insights. Their daily AI-powered analysis has transformed how I see global events. Subscribe now!"
+  ],
+  "videos": [
+    {
+      "video_url": "https://example.com/tdi_promo_video_1756462158.mp4",
+      "thumbnail_url": "https://example.com/tdi_thumbnail_1756462158.jpg",
+      "generation_id": "tdi_ugc_1756462158",
+      "status": "completed",
+      "duration": 30,
+      "avatar_id": "professional_analyst_avatar",
+      "style": "educational_testimonial",
+      "category": "education",
+      "script": "Tired of biased news? I was drowning in conflicting reports until I found Trending Daily Insights. Their AI-powered geopolitical analysis cuts through the noise and gives me the real story every single day. Finally, news I can trust! Subscribe now for daily expert insights.",
+      "video_id": "tdi_promo_1"
+    },
+    {
+      "video_url": "https://example.com/tdi_promo_video_1756462158.mp4",
+      "thumbnail_url": "https://example.com/tdi_thumbnail_1756462158.jpg",
+      "generation_id": "tdi_ugc_1756462158",
+      "status": "completed",
+      "duration": 30,
+      "avatar_id": "professional_analyst_avatar",
+      "style": "educational_testimonial",
+      "category": "education",
+      "script": "As a busy professional, I don't have time to research every global event. That's why I love Trending Daily Insights - they deliver expert-level geopolitical analysis in just 10 minutes daily. It's like having a personal foreign policy advisor! Check them out now.",
+      "video_id": "tdi_promo_2"
+    },
+    {
+      "video_url": "https://example.com/tdi_promo_video_1756462158.mp4",
+      "thumbnail_url": "https://example.com/tdi_thumbnail_1756462158.jpg",
+      "generation_id": "tdi_ugc_1756462158",
+      "status": "completed",
+      "duration": 30,
+      "avatar_id": "professional_analyst_avatar",
+      "style": "educational_testimonial",
+      "category": "education",
+      "script": "I used to feel lost trying to understand world events. Then I discovered Trending Daily Insights. Their AI-generated analysis makes complex geopolitics actually understandable. Now I'm the most informed person in my office! Subscribe for daily insights.",
+      "video_id": "tdi_promo_3"
+    },
+    {
+      "video_url": "https://example.com/tdi_promo_video_1756462158.mp4",
+      "thumbnail_url": "https://example.com/tdi_thumbnail_1756462158.jpg",
+      "generation_id": "tdi_ugc_1756462158",
+      "status": "completed",
+      "duration": 30,
+      "avatar_id": "professional_analyst_avatar",
+      "style": "educational_testimonial",
+      "category": "education",
+      "script": "Stop getting your news from biased sources! Trending Daily Insights uses AI to deliver objective geopolitical analysis every single day. No agenda, no spin - just the facts and expert insights you need. Join 2,000+ subscribers who trust TDI!",
+      "video_id": "tdi_promo_4"
+    },
+    {
+      "video_url": "https://example.com/tdi_promo_video_1756462158.mp4",
+      "thumbnail_url": "https://example.com/tdi_thumbnail_1756462158.jpg",
+      "generation_id": "tdi_ugc_1756462158",
+      "status": "completed",
+      "duration": 30,
+      "avatar_id": "professional_analyst_avatar",
+      "style": "educational_testimonial",
+      "category": "education",
+      "script": "Want to understand what's really happening in the world? Trending Daily Insights breaks down complex geopolitical events into clear, actionable insights. Their daily AI-powered analysis has transformed how I see global events. Subscribe now!",
+      "video_id": "tdi_promo_5"
+    }
+  ],
+  "status": "completed",
+  "total_videos": 5
+}
