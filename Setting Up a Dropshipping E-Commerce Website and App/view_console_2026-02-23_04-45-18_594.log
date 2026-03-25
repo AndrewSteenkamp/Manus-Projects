@@ -1,0 +1,23 @@
+> 
+// Find the View Cart button and inspect its HTML structure
+const viewCartButton = Array.from(document.querySelectorAll('button')).find(btn => btn.textContent.includes('View Cart'));
+if (viewCartButton) {
+  console.log('View Cart button HTML:', viewCartButton.outerHTML);
+  console.log('View Cart button parent:', viewCartButton.parentElement?.outerHTML);
+  
+  // Check if there are nested anchor tags
+  const anchors = viewCartButton.querySelectorAll('a');
+  console.log('Number of anchor tags inside button:', anchors.length);
+  anchors.forEach((a, i) => console.log(`Anchor ${i}:`, a.outerHTML));
+}
+
+// Also check the Account button
+const accountButton = Array.from(document.querySelectorAll('a')).find(a => a.textContent.trim() === 'Account');
+if (accountButton) {
+  console.log('Account button HTML:', accountButton.outerHTML);
+  console.log('Account button parent:', accountButton.parentElement?.outerHTML);
+}
+
+'Inspection complete'
+
+< "Inspection complete"

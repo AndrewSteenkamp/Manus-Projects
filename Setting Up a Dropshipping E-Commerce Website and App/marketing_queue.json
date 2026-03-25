@@ -1,0 +1,23 @@
+{
+  "scheduled_content": [
+    {
+      "type": "social_post",
+      "platform": "instagram",
+      "content": "\ud83d\udee1\ufe0f New iPhone 16 Pro Max cases just dropped! Premium protection with style. Shop now and save 38% vs Amazon! #iPhone16 #PhoneCase #Alpapies",
+      "hashtags": [
+        "#iPhone16",
+        "#PhoneCase",
+        "#TechAccessories"
+      ],
+      "scheduled_time": "2025-10-11T02:28:15.771578",
+      "status": "scheduled"
+    },
+    {
+      "type": "email_campaign",
+      "subject": "\ud83d\udea8 iPhone 16 Accessories - Limited Time 38% Off!",
+      "content": "Get premium protection for your new iPhone 16 with our 1688.com sourced accessories...",
+      "scheduled_time": "2025-10-11T02:28:15.771728",
+      "status": "scheduled"
+    }
+  ]
+}
