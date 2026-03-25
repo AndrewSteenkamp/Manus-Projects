@@ -1,0 +1,503 @@
+# 🔄 Switching from OpenAI to Local/Alternative AI Models
+
+I understand you want to use an alternative to OpenAI's API. Let me show you how to modify your agents to use different AI services or local models. This is a great approach that can save costs and give you more control.
+
+## Option 1: Using Free Alternative APIs
+
+Let's modify the agents to use free alternatives like Anthropic's Claude, Google's Gemini, or local models:
+
+### Step 1: Install Required Packages
+
+First, let's install packages for alternative AI services:
+
+```bash
+pip install anthropic google-generativeai huggingface_hub transformers torch
+```
+
+### Step 2: Create a Universal AI Helper
+
+Create a new file `ai_helper.py` with this versatile AI integration:
+
+```python
+# ai_helper.py
+import os
+import requests
+import json
+from typing import Dict, Any
+
+class AIHelper:
+    def __init__(self, provider="openai"):
+        self.provider = provider
+        self.setup_providers()
+    
+    def setup_providers(self):
+        """Setup configuration for different AI providers"""
+        self.providers = {
+            "openai": {
+                "url": "https://api.openai.com/v1/chat/completions",
+                "headers": {
+                    "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY', '')}",
+                    "Content-Type": "application/json"
+                },
+                "payload": {
+                    "model": "gpt-3.5-turbo",
+                    "temperature": 0.3
+                }
+            },
+            "anthropic": {
+                "url": "https://api.anthropic.com/v1/messages",
+                "headers": {
+                    "x-api-key": os.getenv('ANTHROPIC_API_KEY', ''),
+                    "anthropic-version": "2023-06-01",
+                    "Content-Type": "application/json"
+                },
+                "payload": {
+                    "model": "claude-3-sonnet-20240229",
+                    "max_tokens": 1000
+                }
+            },
+            "google": {
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "payload": {
+                    "temperature": 0.3
+                }
+            },
+            "huggingface": {
+                "url": "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2",
+                "headers": {
+                    "Authorization": f"Bearer {os.getenv('HF_API_KEY', '')}"
+                }
+            },
+            "local": {
+                "url": "http://localhost:11434/api/generate",  # For Ollama
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "payload": {
+                    "model": "llama2",
+                    "stream": False
+                }
+            }
+        }
+    
+    def generate_response(self, prompt: str, system_message: str = None) -> str:
+        """Generate a response using the configured AI provider"""
+        try:
+            if self.provider == "openai":
+                return self._call_openai(prompt, system_message)
+            elif self.provider == "anthropic":
+                return self._call_anthropic(prompt, system_message)
+            elif self.provider == "google":
+                return self._call_google(prompt, system_message)
+            elif self.provider == "huggingface":
+                return self._call_huggingface(prompt)
+            elif self.provider == "local":
+                return self._call_local(prompt)
+            else:
+                raise ValueError(f"Unsupported provider: {self.provider}")
+        except Exception as e:
+            print(f"Error calling {self.provider}: {str(e)}")
+            return f"AI service error: {str(e)}"
+    
+    def _call_openai(self, prompt: str, system_message: str = None) -> str:
+        """Call OpenAI API"""
+        config = self.providers["openai"]
+        messages = []
+        
+        if system_message:
+            messages.append({"role": "system", "content": system_message})
+        messages.append({"role": "user", "content": prompt})
+        
+        payload = config["payload"].copy()
+        payload["messages"] = messages
+        
+        response = requests.post(
+            config["url"],
+            headers=config["headers"],
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()["choices"][0]["message"]["content"]
+    
+    def _call_anthropic(self, prompt: str, system_message: str = None) -> str:
+        """Call Anthropic API"""
+        config = self.providers["anthropic"]
+        
+        messages = [{"role": "user", "content": prompt}]
+        
+        payload = config["payload"].copy()
+        payload["messages"] = messages
+        
+        if system_message:
+            payload["system"] = system_message
+        
+        response = requests.post(
+            config["url"],
+            headers=config["headers"],
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()["content"][0]["text"]
+    
+    def _call_google(self, prompt: str, system_message: str = None) -> str:
+        """Call Google Gemini API"""
+        config = self.providers["google"]
+        
+        # Add API key to URL for Google
+        url = f"{config['url']}?key={os.getenv('GOOGLE_API_KEY', '')}"
+        
+        contents = []
+        if system_message:
+            contents.append({"role": "user", "parts": [{"text": system_message}]})
+        contents.append({"role": "user", "parts": [{"text": prompt}]})
+        
+        payload = {"contents": contents}
+        
+        response = requests.post(
+            url,
+            headers=config["headers"],
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()["candidates"][0]["content"]["parts"][0]["text"]
+    
+    def _call_huggingface(self, prompt: str) -> str:
+        """Call Hugging Face API"""
+        config = self.providers["huggingface"]
+        
+        payload = {"inputs": prompt}
+        
+        response = requests.post(
+            config["url"],
+            headers=config["headers"],
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()[0]["generated_text"]
+    
+    def _call_local(self, prompt: str) -> str:
+        """Call local Ollama API"""
+        config = self.providers["local"]
+        
+        payload = config["payload"].copy()
+        payload["prompt"] = prompt
+        
+        response = requests.post(
+            config["url"],
+            headers=config["headers"],
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()["response"]
+
+# Test the AI helper
+def test_ai_helper():
+    """Test the AI helper with different providers"""
+    helper = AIHelper(provider="openai")  # Change to your preferred provider
+    
+    test_prompt = "What is the capital of France?"
+    response = helper.generate_response(test_prompt)
+    print(f"AI Response: {response}")
+
+if __name__ == "__main__":
+    test_ai_helper()
+```
+
+### Step 3: Update Your .env File
+
+Update your `.env` file with the API keys for your preferred services:
+
+```env
+# Choose one primary service and add its API key
+OPENAI_API_KEY=your_openai_key_here
+ANTHROPIC_API_KEY=your_anthropic_key_here
+GOOGLE_API_KEY=your_google_key_here
+HF_API_KEY=your_huggingface_key_here
+
+# Set your preferred provider
+AI_PROVIDER=openai  # Change to anthropic, google, huggingface, or local
+```
+
+### Step 4: Modify Your CEO Agent
+
+Now let's update your CEO agent to use the new AI helper:
+
+```python
+# ceo_agent_updated.py
+import json
+import sqlite3
+from datetime import datetime
+import os
+from dotenv import load_dotenv
+from ai_helper import AIHelper  # Import our new AI helper
+
+# Load environment variables
+load_dotenv()
+
+class CEOAgent:
+    def __init__(self):
+        # Agent Identity
+        self.name = "Alexandra Sterling"
+        self.role = "CEO"
+        self.department = "Executive"
+        
+        # AI Setup - Use our helper instead of direct OpenAI
+        self.ai_provider = os.getenv('AI_PROVIDER', 'openai')
+        self.ai_helper = AIHelper(provider=self.ai_provider)
+        
+        # Decision Rules (unchanged)
+        self.decision_rules = {
+            "investment_threshold": 100000,
+            "roi_minimum": 2.5,
+            "risk_tolerance": "moderate",
+            "approval_limits": {
+                "marketing_spend": 50000,
+                "hiring_budget": 75000,
+                "equipment": 25000
+            }
+        }
+        
+        # Knowledge Base (unchanged)
+        self.knowledge_base = {
+            "company_info": {
+                "name": "VelocityAI Media",
+                "industry": "AI-Powered Marketing",
+                "target_market": "E-commerce businesses",
+                "competitive_advantage": "AI automation + human creativity"
+            },
+            "financial_targets": {
+                "monthly_revenue_target": 500000,
+                "annual_growth_rate": 3.0,
+                "profit_margin_target": 0.75
+            },
+            "strategic_priorities": [
+                "Client acquisition and retention",
+                "Product quality and innovation", 
+                "Team building and culture",
+                "Market expansion",
+                "Technology advancement"
+            ]
+        }
+        
+        # Initialize database
+        self.init_database()
+    
+    def init_database(self):
+        """Initialize CEO decision database"""
+        # (Keep your existing database code)
+        pass
+    
+    def make_strategic_decision(self, request):
+        """Make strategic business decisions using AI"""
+        
+        # Prepare context for AI
+        context = f"""
+        You are Alexandra Sterling, CEO of VelocityAI Media.
+        
+        Company Info: {json.dumps(self.knowledge_base['company_info'])}
+        Decision Rules: {json.dumps(self.decision_rules)}
+        Strategic Priorities: {json.dumps(self.knowledge_base['strategic_priorities'])}
+        
+        Request: {json.dumps(request)}
+        
+        Make a decision and provide:
+        1. Decision (APPROVE/REJECT/REQUEST_MORE_INFO)
+        2. Detailed reasoning
+        3. Conditions (if any)
+        4. Risk assessment
+        5. Expected impact
+        
+        Respond in JSON format.
+        """
+        
+        try:
+            # Use our AI helper instead of direct OpenAI call
+            system_message = "You are a strategic CEO making business decisions."
+            decision_text = self.ai_helper.generate_response(context, system_message)
+            
+            # Try to parse as JSON, fallback to text
+            try:
+                decision = json.loads(decision_text)
+            except:
+                decision = {
+                    "decision": "REQUEST_MORE_INFO",
+                    "reasoning": decision_text,
+                    "conditions": [],
+                    "risk_assessment": "Unable to parse decision",
+                    "expected_impact": "Unknown"
+                }
+            
+            # Store decision in database
+            self.store_decision(request, decision)
+            
+            return decision
+            
+        except Exception as e:
+            return {
+                "decision": "ERROR",
+                "reasoning": f"AI decision failed: {str(e)}",
+                "conditions": ["Fix AI integration"],
+                "risk_assessment": "High - system malfunction",
+                "expected_impact": "Negative - manual intervention required"
+            }
+    
+    # Keep the rest of your methods unchanged
+    def store_decision(self, request, decision):
+        """Store decision in database for tracking"""
+        # Your existing code
+        pass
+    
+    def analyze_company_performance(self):
+        """Analyze current company performance"""
+        
+        context = f"""
+        As CEO of VelocityAI Media, analyze our current performance:
+        
+        Financial Targets: {json.dumps(self.knowledge_base['financial_targets'])}
+        Strategic Priorities: {json.dumps(self.knowledge_base['strategic_priorities'])}
+        
+        Current Metrics:
+        - Monthly Revenue: R387,500
+        - Active Clients: 24
+        - Client Satisfaction: 4.8/5
+        - Team Size: 12 people
+        - Monthly Costs: R125,000
+        
+        Provide:
+        1. Performance assessment
+        2. Key strengths
+        3. Areas for improvement
+        4. Strategic recommendations
+        5. Action items
+        
+        Respond in JSON format.
+        """
+        
+        try:
+            # Use our AI helper
+            system_message = "You are a CEO analyzing company performance."
+            analysis_text = self.ai_helper.generate_response(context, system_message)
+            
+            try:
+                return json.loads(analysis_text)
+            except:
+                return {"analysis": analysis_text, "status": "text_format"}
+                
+        except Exception as e:
+            return {"error": f"Analysis failed: {str(e)}"}
+    
+    # Other methods remain the same...
+
+# Test the updated CEO agent
+def test_updated_ceo_agent():
+    """Test the updated CEO agent"""
+    print("Testing updated CEO Agent with alternative AI provider...")
+    
+    ceo = CEOAgent()
+    print(f"Using AI provider: {ceo.ai_provider}")
+    
+    # Test decision
+    test_request = {
+        "type": "investment_request",
+        "description": "Invest R75,000 in new video editing software",
+        "amount": 75000,
+        "expected_return": 200000,
+        "timeframe": "12 months",
+        "risk_level": "low"
+    }
+    
+    decision = ceo.make_strategic_decision(test_request)
+    print(f"Decision: {decision}")
+    
+    # Test performance analysis
+    analysis = ceo.analyze_company_performance()
+    print(f"Analysis: {analysis}")
+
+if __name__ == "__main__":
+    test_updated_ceo_agent()
+```
+
+### Step 5: Update Other Agents
+
+Repeat the same process for your CFO and Sales agents:
+
+1. Replace the OpenAI import with our AIHelper
+2. Replace the OpenAI API calls with `self.ai_helper.generate_response()`
+
+### Step 6: Option - Use Local Models with Ollama
+
+If you want to use completely local models without API costs:
+
+1. Install Ollama: https://ollama.ai/
+2. Download a model: `ollama pull llama2`
+3. Set your `.env` to use local provider:
+   ```env
+   AI_PROVIDER=local
+   ```
+
+### Step 7: Test Your Updated System
+
+Create a test script to verify everything works:
+
+```python
+# test_updated_system.py
+from ceo_agent_updated import CEOAgent
+from ai_helper import AIHelper
+
+def test_all_providers():
+    """Test all available AI providers"""
+    providers = ["openai", "anthropic", "google", "huggingface", "local"]
+    
+    for provider in providers:
+        print(f"\n=== Testing {provider} provider ===")
+        
+        try:
+            # Test the AI helper directly
+            helper = AIHelper(provider=provider)
+            test_prompt = "What is the capital of France? Answer in one word."
+            response = helper.generate_response(test_prompt)
+            print(f"Response: {response}")
+            
+            # Test the CEO agent
+            ceo = CEOAgent()
+            ceo.ai_provider = provider  # Override the default
+            ceo.ai_helper = helper
+                
+            test_request = {
+                "type": "test_request",
+                "description": "Test investment",
+                "amount": 50000,
+                "expected_return": 150000,
+                "timeframe": "12 months"
+            }
+            
+            decision = ceo.make_strategic_decision(test_request)
+            print(f"CEO Decision: {decision.get('decision', 'No decision')}")
+            
+        except Exception as e:
+            print(f"Error with {provider}: {str(e)}")
+
+if __name__ == "__main__":
+    test_all_providers()
+```
+
+## Benefits of This Approach
+
+1. **Cost Savings**: Use free tiers or local models to avoid API costs
+2. **Flexibility**: Easily switch between different AI providers
+3. **Redundancy**: If one service is down, you can switch to another
+4. **Privacy**: Local models keep your data on your own machine
+5. **Customization**: You can fine-tune local models for your specific needs
+
+## Next Steps
+
+1. Choose which AI provider you want to use primarily
+2. Get the necessary API keys if using cloud services
+3. Install Ollama if you want to use local models
+4. Test each provider to see which works best for your needs
+5. Update your other agents (CFO, Sales) with the same pattern
+
+Would you like me to help you set up a specific AI provider, or do you need help with any part of this migration?

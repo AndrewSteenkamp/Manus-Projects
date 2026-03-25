@@ -1,0 +1,727 @@
+{
+  "title": "Zero-Cost UGC Business Bootstrap Guide",
+  "subtitle": "Start with R0, Generate R5k+ in Week 1",
+  "overview": {
+    "startup_cost": 0,
+    "time_to_first_revenue": "3-7 days",
+    "first_month_potential": "R20,000-R50,000",
+    "required_skills": "Basic smartphone use, willingness to learn",
+    "required_equipment": "Smartphone with camera (you already have)"
+  },
+  "free_tools": null,
+  "service_packages": [
+    {
+      "name": "Starter UGC Package",
+      "price": 2500,
+      "delivery_time": "3 days",
+      "includes": [
+        "5 UGC-style videos (30-60 seconds each)",
+        "Basic script writing",
+        "Simple editing with CapCut",
+        "Delivered via Google Drive",
+        "1 revision included"
+      ],
+      "tools_used": [
+        "ChatGPT Free",
+        "Canva",
+        "CapCut",
+        "Smartphone camera"
+      ],
+      "profit_margin": 0.95
+    },
+    {
+      "name": "Growth UGC Package",
+      "price": 5000,
+      "delivery_time": "5 days",
+      "includes": [
+        "10 UGC-style videos",
+        "Advanced script writing",
+        "Professional editing",
+        "Custom thumbnails",
+        "Social media captions",
+        "2 revisions included"
+      ],
+      "tools_used": [
+        "ChatGPT Free",
+        "Canva Pro trial",
+        "CapCut",
+        "Smartphone"
+      ],
+      "profit_margin": 0.92
+    },
+    {
+      "name": "Premium UGC Package",
+      "price": 10000,
+      "delivery_time": "7 days",
+      "includes": [
+        "20 UGC-style videos",
+        "Premium script writing",
+        "Professional editing with effects",
+        "Custom thumbnails and graphics",
+        "Social media strategy",
+        "Performance tracking setup",
+        "Unlimited revisions"
+      ],
+      "tools_used": [
+        "ChatGPT Free",
+        "Canva",
+        "CapCut",
+        "Multiple angles"
+      ],
+      "profit_margin": 0.9
+    }
+  ],
+  "prospect_sources": [
+    {
+      "prospect_id": "221acb67-cb38-4769-abc9-33e958209989",
+      "business_name": "Local Business 1",
+      "contact_person": "Owner 1",
+      "email": "owner1@business1.co.za",
+      "phone": "+27 81 100 1000",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "5f45119e-95c1-4581-a556-9aa225c5dd04",
+      "business_name": "Local Business 2",
+      "contact_person": "Owner 2",
+      "email": "owner2@business2.co.za",
+      "phone": "+27 82 101 1001",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "4fa094a2-80ff-4df4-b9cf-4f0324662ec6",
+      "business_name": "Local Business 3",
+      "contact_person": "Owner 3",
+      "email": "owner3@business3.co.za",
+      "phone": "+27 83 102 1002",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "bed06050-7b38-46c8-957f-2a3b393cf40a",
+      "business_name": "Local Business 4",
+      "contact_person": "Owner 4",
+      "email": "owner4@business4.co.za",
+      "phone": "+27 84 103 1003",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "a1d097c8-c494-4e7d-8261-ce5eb6d94b05",
+      "business_name": "Local Business 5",
+      "contact_person": "Owner 5",
+      "email": "owner5@business5.co.za",
+      "phone": "+27 85 104 1004",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "dbf5e152-4746-4fe8-96b9-230449dfd58d",
+      "business_name": "Local Business 6",
+      "contact_person": "Owner 6",
+      "email": "owner6@business6.co.za",
+      "phone": "+27 86 105 1005",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "30ed4018-5f21-4919-b7dc-3f25573911bc",
+      "business_name": "Local Business 7",
+      "contact_person": "Owner 7",
+      "email": "owner7@business7.co.za",
+      "phone": "+27 87 106 1006",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "372e8ceb-9104-4fae-9aaf-e5f4021be8e8",
+      "business_name": "Local Business 8",
+      "contact_person": "Owner 8",
+      "email": "owner8@business8.co.za",
+      "phone": "+27 88 107 1007",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "1c294c92-21b4-41f8-a566-21ff4b24dccc",
+      "business_name": "Local Business 9",
+      "contact_person": "Owner 9",
+      "email": "owner9@business9.co.za",
+      "phone": "+27 89 108 1008",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "3dccfed4-fd9b-4898-8a03-2ae37ad7707e",
+      "business_name": "Local Business 10",
+      "contact_person": "Owner 10",
+      "email": "owner10@business10.co.za",
+      "phone": "+27 81 109 1009",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "3c6e6fe8-6ea6-42bd-b208-987d99bb4da1",
+      "business_name": "Local Business 11",
+      "contact_person": "Owner 11",
+      "email": "owner11@business11.co.za",
+      "phone": "+27 82 110 1010",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "205de9f7-12e0-4c00-8de4-69286b85ab09",
+      "business_name": "Local Business 12",
+      "contact_person": "Owner 12",
+      "email": "owner12@business12.co.za",
+      "phone": "+27 83 111 1011",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "fd18d08e-ac0f-44fc-a215-97147771d68f",
+      "business_name": "Local Business 13",
+      "contact_person": "Owner 13",
+      "email": "owner13@business13.co.za",
+      "phone": "+27 84 112 1012",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "df0987ec-3fba-4cd7-977a-223cfb622e04",
+      "business_name": "Local Business 14",
+      "contact_person": "Owner 14",
+      "email": "owner14@business14.co.za",
+      "phone": "+27 85 113 1013",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "430cea71-81dc-42ba-b2e7-54f1cbba5bb6",
+      "business_name": "Local Business 15",
+      "contact_person": "Owner 15",
+      "email": "owner15@business15.co.za",
+      "phone": "+27 86 114 1014",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "8867cea5-0547-4885-a40a-44b38ee5a808",
+      "business_name": "Local Business 16",
+      "contact_person": "Owner 16",
+      "email": "owner16@business16.co.za",
+      "phone": "+27 87 115 1015",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "d965d3f5-4e47-4fb2-8ef3-252360ab312b",
+      "business_name": "Local Business 17",
+      "contact_person": "Owner 17",
+      "email": "owner17@business17.co.za",
+      "phone": "+27 88 116 1016",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "97233abf-a7e0-4316-89e8-4abae44f2e76",
+      "business_name": "Local Business 18",
+      "contact_person": "Owner 18",
+      "email": "owner18@business18.co.za",
+      "phone": "+27 89 117 1017",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "7cdd273b-7d9e-4820-bba7-ce40146c804b",
+      "business_name": "Local Business 19",
+      "contact_person": "Owner 19",
+      "email": "owner19@business19.co.za",
+      "phone": "+27 81 118 1018",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "5e149647-5dc1-4dfa-83b1-7e191a91725e",
+      "business_name": "Local Business 20",
+      "contact_person": "Owner 20",
+      "email": "owner20@business20.co.za",
+      "phone": "+27 82 119 1019",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "fe241af0-080b-407e-8404-36f5c2190471",
+      "business_name": "Local Business 21",
+      "contact_person": "Owner 21",
+      "email": "owner21@business21.co.za",
+      "phone": "+27 83 120 1020",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "6a9ad621-12ea-4fe2-8a46-dce911a06f3a",
+      "business_name": "Local Business 22",
+      "contact_person": "Owner 22",
+      "email": "owner22@business22.co.za",
+      "phone": "+27 84 121 1021",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "9e47c33b-b3ba-4b7a-babe-56577e33e99a",
+      "business_name": "Local Business 23",
+      "contact_person": "Owner 23",
+      "email": "owner23@business23.co.za",
+      "phone": "+27 85 122 1022",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "c96545eb-87bb-4550-a8d4-8573a9ef8e4a",
+      "business_name": "Local Business 24",
+      "contact_person": "Owner 24",
+      "email": "owner24@business24.co.za",
+      "phone": "+27 86 123 1023",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "8e1ae3f9-4cc3-49ba-87e0-d18277a5c1c8",
+      "business_name": "Local Business 25",
+      "contact_person": "Owner 25",
+      "email": "owner25@business25.co.za",
+      "phone": "+27 87 124 1024",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "eea6b504-9039-4d92-a733-a7ad4bc6ce95",
+      "business_name": "Local Business 26",
+      "contact_person": "Owner 26",
+      "email": "owner26@business26.co.za",
+      "phone": "+27 88 125 1025",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "28d394bc-94fa-4d34-97f5-4b9fe09bab2f",
+      "business_name": "Local Business 27",
+      "contact_person": "Owner 27",
+      "email": "owner27@business27.co.za",
+      "phone": "+27 89 126 1026",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "f2089c41-63c3-4256-b330-dadd5981793e",
+      "business_name": "Local Business 28",
+      "contact_person": "Owner 28",
+      "email": "owner28@business28.co.za",
+      "phone": "+27 81 127 1027",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "f346c92c-3dca-44bb-9c00-41b0cb75a51c",
+      "business_name": "Local Business 29",
+      "contact_person": "Owner 29",
+      "email": "owner29@business29.co.za",
+      "phone": "+27 82 128 1028",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "89243b9b-6b80-47ea-a8ab-114780599068",
+      "business_name": "Local Business 30",
+      "contact_person": "Owner 30",
+      "email": "owner30@business30.co.za",
+      "phone": "+27 83 129 1029",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "d691c530-7a7e-4034-87d3-1c1a3eb1c188",
+      "business_name": "Local Business 31",
+      "contact_person": "Owner 31",
+      "email": "owner31@business31.co.za",
+      "phone": "+27 84 130 1030",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "16c69c1c-f156-4d53-9664-0eed0557485d",
+      "business_name": "Local Business 32",
+      "contact_person": "Owner 32",
+      "email": "owner32@business32.co.za",
+      "phone": "+27 85 131 1031",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "e6f24f9c-bcdc-4865-88f4-dde28636843e",
+      "business_name": "Local Business 33",
+      "contact_person": "Owner 33",
+      "email": "owner33@business33.co.za",
+      "phone": "+27 86 132 1032",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "3198a2ff-6d2d-44fc-9910-6c3abe0f7a50",
+      "business_name": "Local Business 34",
+      "contact_person": "Owner 34",
+      "email": "owner34@business34.co.za",
+      "phone": "+27 87 133 1033",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "e5e7607f-39e3-4bf4-8306-462f195ebfd3",
+      "business_name": "Local Business 35",
+      "contact_person": "Owner 35",
+      "email": "owner35@business35.co.za",
+      "phone": "+27 88 134 1034",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "cb290eb6-0fcf-4c34-ac39-b611c04c48ba",
+      "business_name": "Local Business 36",
+      "contact_person": "Owner 36",
+      "email": "owner36@business36.co.za",
+      "phone": "+27 89 135 1035",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "5fb100ba-919e-40dd-8f83-01e4efcdab70",
+      "business_name": "Local Business 37",
+      "contact_person": "Owner 37",
+      "email": "owner37@business37.co.za",
+      "phone": "+27 81 136 1036",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "0443414d-e6c3-4419-b848-292ed0b22cc5",
+      "business_name": "Local Business 38",
+      "contact_person": "Owner 38",
+      "email": "owner38@business38.co.za",
+      "phone": "+27 82 137 1037",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "2d77e422-5aa7-4ce0-9b80-97eb9cf7a182",
+      "business_name": "Local Business 39",
+      "contact_person": "Owner 39",
+      "email": "owner39@business39.co.za",
+      "phone": "+27 83 138 1038",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "31442233-dd3a-43b5-9d54-f6398fee4989",
+      "business_name": "Local Business 40",
+      "contact_person": "Owner 40",
+      "email": "owner40@business40.co.za",
+      "phone": "+27 84 139 1039",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "dc11178e-9a44-482a-89d5-181c5e056bb7",
+      "business_name": "Local Business 41",
+      "contact_person": "Owner 41",
+      "email": "owner41@business41.co.za",
+      "phone": "+27 85 140 1040",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "9332145d-e6c9-4fd4-8aff-32b4bea95452",
+      "business_name": "Local Business 42",
+      "contact_person": "Owner 42",
+      "email": "owner42@business42.co.za",
+      "phone": "+27 86 141 1041",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "c74015bf-37da-4f9e-ab3b-8fe2296c0d44",
+      "business_name": "Local Business 43",
+      "contact_person": "Owner 43",
+      "email": "owner43@business43.co.za",
+      "phone": "+27 87 142 1042",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "1120c9f9-a99d-4158-9da5-f7c0d4816555",
+      "business_name": "Local Business 44",
+      "contact_person": "Owner 44",
+      "email": "owner44@business44.co.za",
+      "phone": "+27 88 143 1043",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "6e9c3adb-79d0-400f-8f3b-64a938fcf9f0",
+      "business_name": "Local Business 45",
+      "contact_person": "Owner 45",
+      "email": "owner45@business45.co.za",
+      "phone": "+27 89 144 1044",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "2e9e4d6f-fdd1-492b-98a9-70c8ad53e60b",
+      "business_name": "Local Business 46",
+      "contact_person": "Owner 46",
+      "email": "owner46@business46.co.za",
+      "phone": "+27 81 145 1045",
+      "industry": "Restaurant",
+      "found_via": "Facebook",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "273323db-1aea-4c8f-b99a-35de061939d6",
+      "business_name": "Local Business 47",
+      "contact_person": "Owner 47",
+      "email": "owner47@business47.co.za",
+      "phone": "+27 82 146 1046",
+      "industry": "Gym",
+      "found_via": "LinkedIn",
+      "estimated_budget": "R5,000-R10,000"
+    },
+    {
+      "prospect_id": "53c4e6a9-f887-4782-af58-e2718c04860a",
+      "business_name": "Local Business 48",
+      "contact_person": "Owner 48",
+      "email": "owner48@business48.co.za",
+      "phone": "+27 83 147 1047",
+      "industry": "Beauty Salon",
+      "found_via": "Google My Business",
+      "estimated_budget": "R10,000-R20,000"
+    },
+    {
+      "prospect_id": "b0a54c0c-ca4b-4885-8763-7fee5188dfa4",
+      "business_name": "Local Business 49",
+      "contact_person": "Owner 49",
+      "email": "owner49@business49.co.za",
+      "phone": "+27 84 148 1048",
+      "industry": "Retail Store",
+      "found_via": "Instagram",
+      "estimated_budget": "R2,000-R5,000"
+    },
+    {
+      "prospect_id": "3da7479f-517e-4481-adf1-99fc67aabc73",
+      "business_name": "Local Business 50",
+      "contact_person": "Owner 50",
+      "email": "owner50@business50.co.za",
+      "phone": "+27 85 149 1049",
+      "industry": "Professional Service",
+      "found_via": "Directory",
+      "estimated_budget": "R5,000-R10,000"
+    }
+  ],
+  "outreach_templates": {
+    "cold_email": {
+      "subject": "Free UGC Video Sample for {business_name}",
+      "body": "Hi {contact_name},\n\nI noticed {business_name} on {platform} and love what you're doing in the {industry} space!\n\nI specialize in creating UGC-style videos that look authentic and convert better than traditional ads. I'd love to create a FREE sample video for your business to show you what's possible.\n\nHere's what I can do for you:\n\u2022 Create authentic-looking customer testimonial videos\n\u2022 Product demonstration videos that feel genuine\n\u2022 Social proof content that builds trust\n\u2022 All delivered within 48 hours\n\nNo cost, no obligation - just want to show you the quality of work.\n\nWould you be interested in a free sample?\n\nBest regards,\n{your_name}\n{your_phone}"
+    },
+    "linkedin_message": {
+      "subject": "Quick question about {business_name}",
+      "body": "Hi {contact_name},\n\nI came across {business_name} and was impressed by your {specific_compliment}.\n\nI help businesses like yours create authentic UGC-style videos that convert 40% better than traditional content. \n\nWould you be open to a free sample video to see if it could help {business_name} get more customers?\n\nTakes 2 minutes to discuss.\n\nBest,\n{your_name}"
+    },
+    "whatsapp_message": {
+      "body": "Hi {contact_name}! \ud83d\udc4b\n\nSaw {business_name} on {platform} - love your {industry} business!\n\nI create UGC videos that look like real customer reviews (but way better quality). \n\nWant a FREE sample for {business_name}? No strings attached - just want to show you what's possible.\n\nReply \"YES\" if interested! \ud83c\udfa5"
+    }
+  },
+  "sample_scripts": {
+    "restaurant": {
+      "hook": "Guys, I found the BEST hidden gem restaurant...",
+      "body": "So I was walking past [Restaurant Name] and decided to try their [signature dish]. OMG, the flavors! The [specific detail] was incredible. And the staff? So friendly! I'm definitely coming back.",
+      "cta": "You HAVE to try this place. Tell them [your name] sent you!",
+      "duration": "45 seconds"
+    },
+    "gym": {
+      "hook": "This gym completely changed my fitness journey...",
+      "body": "I was struggling to stay motivated until I found [Gym Name]. The trainers actually care, the equipment is top-notch, and the community is amazing. I've seen real results in just 6 weeks!",
+      "cta": "If you're serious about fitness, check them out. First session is free!",
+      "duration": "50 seconds"
+    },
+    "beauty_salon": {
+      "hook": "I can't believe this transformation...",
+      "body": "I went to [Salon Name] feeling so self-conscious about my hair. [Stylist Name] listened to exactly what I wanted and delivered beyond my expectations. Look at this color! I feel like a new person.",
+      "cta": "Book with them now - they're getting busy fast!",
+      "duration": "40 seconds"
+    },
+    "retail_store": {
+      "hook": "I wasn't planning to buy anything, but...",
+      "body": "I walked into [Store Name] just to browse and ended up finding the perfect [product] for [occasion]. The quality is amazing and the price? Way better than the big chains. Plus, supporting local feels good!",
+      "cta": "Check them out before everyone discovers this place!",
+      "duration": "35 seconds"
+    }
+  },
+  "timeline": {
+    "Day 1": {
+      "tasks": [
+        "Set up all free accounts (Gmail, Canva, CapCut, etc.)",
+        "Create basic business profiles",
+        "Find first 20 prospects"
+      ],
+      "time_required": "4 hours",
+      "cost": 0
+    },
+    "Day 2-3": {
+      "tasks": [
+        "Send first batch of outreach (20 prospects)",
+        "Create sample UGC videos for portfolio",
+        "Set up PayFast for payments"
+      ],
+      "time_required": "6 hours",
+      "cost": 0
+    },
+    "Day 4-7": {
+      "tasks": [
+        "Follow up with prospects",
+        "Create free samples for interested prospects",
+        "Close first 2-3 clients"
+      ],
+      "time_required": "8 hours",
+      "expected_revenue": "R5,000-R15,000"
+    },
+    "Week 2": {
+      "tasks": [
+        "Deliver first client work",
+        "Get testimonials and referrals",
+        "Scale outreach to 50 prospects/week"
+      ],
+      "expected_revenue": "R10,000-R25,000"
+    },
+    "Week 3-4": {
+      "tasks": [
+        "Reinvest profits into better equipment",
+        "Hire virtual assistant for outreach",
+        "Systematize the process"
+      ],
+      "expected_revenue": "R20,000-R40,000"
+    },
+    "Month 2": {
+      "tasks": [
+        "Scale to 10-15 clients",
+        "Increase prices",
+        "Add team members"
+      ],
+      "expected_revenue": "R50,000-R100,000"
+    }
+  },
+  "action_plan": {
+    "business_model": {
+      "startup_cost": 0,
+      "monthly_expenses": 0,
+      "revenue_model": "Pay-per-project UGC video creation",
+      "target_market": "Small local businesses with poor video content",
+      "competitive_advantage": "Authentic UGC style at fraction of agency cost"
+    },
+    "immediate_actions": [
+      {
+        "action": "Set up free Gmail business account",
+        "time": "10 minutes",
+        "url": "https://gmail.com",
+        "priority": "HIGH"
+      },
+      {
+        "action": "Create Canva account and learn basic video creation",
+        "time": "30 minutes",
+        "url": "https://canva.com",
+        "priority": "HIGH"
+      },
+      {
+        "action": "Download CapCut app for video editing",
+        "time": "15 minutes",
+        "url": "https://capcut.com",
+        "priority": "HIGH"
+      },
+      {
+        "action": "Set up ChatGPT account for script writing",
+        "time": "5 minutes",
+        "url": "https://chat.openai.com",
+        "priority": "HIGH"
+      },
+      {
+        "action": "Create Facebook business page",
+        "time": "20 minutes",
+        "url": "https://facebook.com/pages",
+        "priority": "MEDIUM"
+      },
+      {
+        "action": "Set up PayFast for payments",
+        "time": "30 minutes",
+        "url": "https://payfast.co.za",
+        "priority": "HIGH"
+      }
+    ],
+    "first_week_goals": [
+      "Find 50 potential clients using free methods",
+      "Send 20 outreach messages",
+      "Create 3 sample UGC videos",
+      "Close 2-3 clients for R5,000-R15,000 total"
+    ],
+    "scaling_strategy": [
+      "Reinvest first profits into better smartphone/lighting",
+      "Hire VA for prospect research (R2,000/month)",
+      "Increase prices as portfolio grows",
+      "Add team members at R10k+ monthly revenue"
+    ]
+  }
+}

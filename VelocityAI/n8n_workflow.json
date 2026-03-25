@@ -1,0 +1,249 @@
+{
+  "name": "UGC Ads Generation Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "start-ad-generation",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-start",
+      "name": "Webhook - Start Generation",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract project data from webhook\nconst projectData = items[0].json;\n\nreturn [\n  {\n    json: {\n      project_id: projectData.project_id,\n      product_name: projectData.product_name,\n      product_url: projectData.product_url,\n      product_description: projectData.product_description || '',\n      client_id: projectData.client_id\n    }\n  }\n];"
+      },
+      "id": "extract-data",
+      "name": "Extract Project Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "httpHeaderAuth": {
+          "name": "Authorization",
+          "value": "Bearer YOUR_PERPLEXITY_API_KEY"
+        },
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"model\": \"llama-3.1-sonar-small-128k-online\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a market research expert. Research pain points and customer language for the given product.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Research pain points that {{$json.product_name}} solves. Product: {{$json.product_description}}. Provide pain points and customer quotes from Reddit and forums. Format as JSON with keys: pain_points, customer_quotes, common_language\"\n    }\n  ]\n}"
+      },
+      "id": "perplexity-research",
+      "name": "Perplexity - Pain Point Research",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse Perplexity response and extract research data\nconst response = items[0].json.choices[0].message.content;\nlet researchData;\n\ntry {\n  researchData = JSON.parse(response);\n} catch (e) {\n  // Fallback if JSON parsing fails\n  researchData = {\n    pain_points: [\"Product effectiveness\", \"Quality concerns\", \"Value for money\"],\n    customer_quotes: [\"This product really works\", \"Great value\", \"Highly recommended\"],\n    common_language: [\"effective\", \"quality\", \"recommended\"]\n  };\n}\n\nreturn [\n  {\n    json: {\n      ...items[0].json,\n      research_data: researchData\n    }\n  }\n];"
+      },
+      "id": "process-research",
+      "name": "Process Research Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "httpHeaderAuth": {
+          "name": "Authorization",
+          "value": "Bearer YOUR_OPENAI_API_KEY"
+        },
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"model\": \"gpt-4\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an expert UGC ad copywriter. Generate 10 different 30-second ad scripts.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Generate 10 UGC-style ad scripts for {{$json.product_name}}. Pain points: {{$json.research_data.pain_points}}. Customer quotes: {{$json.research_data.customer_quotes}}. Each script should be 30 seconds, conversational, and include a clear CTA. Return as JSON array with key 'scripts'.\"\n    }\n  ],\n  \"temperature\": 0.8\n}"
+      },
+      "id": "claude-scripts",
+      "name": "OpenAI - Generate Scripts",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse script generation response\nconst response = items[0].json.choices[0].message.content;\nlet scripts;\n\ntry {\n  const parsed = JSON.parse(response);\n  scripts = parsed.scripts || [];\n} catch (e) {\n  // Fallback - split response by lines and create scripts\n  scripts = response.split('\\n\\n').filter(s => s.trim().length > 50).slice(0, 10);\n}\n\n// Create individual items for each script\nconst scriptItems = scripts.map((script, index) => ({\n  json: {\n    ...items[0].json,\n    script: script,\n    script_index: index + 1\n  }\n}));\n\nreturn scriptItems;"
+      },
+      "id": "process-scripts",
+      "name": "Process Scripts",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.makeugc.ai/v1/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "httpHeaderAuth": {
+          "name": "Authorization",
+          "value": "Bearer YOUR_MAKEUGC_API_KEY"
+        },
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"script\": \"{{$json.script}}\",\n  \"avatar_id\": \"default_avatar\",\n  \"product_image\": \"{{$json.product_url}}\",\n  \"duration\": 30,\n  \"style\": \"ugc_testimonial\"\n}"
+      },
+      "id": "makeugc-generate",
+      "name": "MakeUGC - Generate Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:5000/api/ads",
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"project_id\": \"{{$json.project_id}}\",\n  \"script\": \"{{$json.script}}\",\n  \"video_url\": \"{{$json.video_url}}\",\n  \"thumbnail_url\": \"{{$json.thumbnail_url}}\",\n  \"status\": \"pending_review\",\n  \"ai_avatar_id\": \"{{$json.avatar_id}}\",\n  \"generation_job_id\": \"{{$json.job_id}}\"\n}"
+      },
+      "id": "save-ad",
+      "name": "Save Ad to Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:5000/api/projects/{{$json.project_id}}",
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "{\n  \"status\": \"completed\",\n  \"pain_points\": \"{{JSON.stringify($json.research_data)}}\"\n}",
+        "httpMethod": "PUT"
+      },
+      "id": "update-project",
+      "name": "Update Project Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [2000, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": true,\n  \"message\": \"Ad generation completed\",\n  \"project_id\": \"{{$json.project_id}}\",\n  \"ads_generated\": \"{{$json.script_index}}\"\n}"
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2220, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Start Generation": {
+      "main": [
+        [
+          {
+            "node": "Extract Project Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Project Data": {
+      "main": [
+        [
+          {
+            "node": "Perplexity - Pain Point Research",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Perplexity - Pain Point Research": {
+      "main": [
+        [
+          {
+            "node": "Process Research Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Research Data": {
+      "main": [
+        [
+          {
+            "node": "OpenAI - Generate Scripts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI - Generate Scripts": {
+      "main": [
+        [
+          {
+            "node": "Process Scripts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Scripts": {
+      "main": [
+        [
+          {
+            "node": "MakeUGC - Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MakeUGC - Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Save Ad to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Ad to Database": {
+      "main": [
+        [
+          {
+            "node": "Update Project Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Project Status": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "createdAt": "2025-08-27T06:00:00.000Z",
+  "updatedAt": "2025-08-27T06:00:00.000Z",
+  "id": "ugc-ads-workflow"
+}
+

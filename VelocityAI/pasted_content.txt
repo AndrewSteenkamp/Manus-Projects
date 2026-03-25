@@ -1,0 +1,219 @@
+search howtomake.com you're going to get
+8:03
+a ton of beginner tutorials. You can
+8:05
+learn this in a weekend. It's not that
+8:07
+complicated. But if you're worried about
+8:08
+learning this or you don't have the time
+8:10
+to do this, you can go and hire an AI
+8:12
+automation specialist for your agency at
+8:15
+talentfiber.com. TalentFiber is the best
+8:18
+place to get offshore talent. Their
+8:20
+process is super straightforward. They
+8:22
+interview 100 plus people. You get the
+8:24
+top five. They validate that those
+8:25
+people actually have those skills and
+8:27
+they function as an outsourced HR
+8:29
+agency. So if that person underperforms
+8:30
+in any way, they hire and fire somebody
+8:32
+new for you. And this is what the best
+8:34
+companies are doing in the world right
+8:35
+now is they're bringing in these AI
+8:37
+automation specialists to automate as
+8:39
+much of their businesses as possible
+8:41
+because the margins you can get out of
+8:43
+these companies is so much bigger than
+8:44
+they used to be. And if you need an AI
+8:45
+automation specialist for your business,
+8:47
+go to townfr.com. The best way to get
+8:49
+customers for this agency is going to be
+8:51
+showing the skill set, showing you do
+8:53
+this in public. So making ads, putting
+8:55
+them on LinkedIn, putting them on
+8:56
+Twitter, showing the service that you
+8:58
+can do. And then what's naturally going
+8:59
+to come from that is you're going to get
+9:01
+inbound leads from that. You also can do
+9:02
+this on YouTube just exactly like I'm
+9:04
+doing here. And then if you want to
+9:05
+level this up even further, you can go
+9:07
+and start cold emailing companies with
+9:10
+your service offering. To do that cold
+9:12
+email, what you're going to need to do
+9:13
+is find the emails, validate them, and
+9:15
+then cold email them. And I'm going to
+9:16
+talk through the technology stack that I
+9:18
+use that we're seeing a lot of success
+Automation & Scaling Strategies
+9:20
+with. So I would go to builtwith and I
+9:22
+would download this lead list of all of
+9:24
+the Shopify stores. It's going to have
+9:25
+emails included in that. You could also
+9:27
+go to Apollo.io and filter the
+9:30
+technology by Shopify. You'll then run
+9:32
+those cold emails through Million
+9:34
+Verifier to validate those emails. All
+9:36
+this means is you're finding if that
+9:38
+email is actually a valid email that you
+9:39
+should be sending to. If you don't do
+9:41
+this and you send it invalid emails,
+9:43
+you'll decrease the deliverability and
+9:45
+burn those email accounts that you're
+9:46
+going to be sending from. And the cold
+9:48
+email infrastructure that's working well
+9:49
+for us right now is Hyper Tide. Another
+9:51
+one that's cheaper is called Mail Reef.
+9:53
+Both Mail Reef and Hyper Tide host the
+9:55
+email inboxes that you're going to be
+9:57
+sending from. And then the cold emailing
+9:58
+software that we use is instantly, but
+10:00
+you can also use something like smart
+10:02
+lead AI. And the cold email I would send
+10:03
+would be something like this. You're
+10:04
+just wanting a subject line that's going
+10:06
+to get them to open the email and then
+10:08
+say something like, "Hey Name, saw
+10:09
+you're running ads on Facebook. We build
+10:11
+a 100red ads a month for our clients.
+10:13
+Can I make you five free ads?" And by
+10:15
+offering this free action, you're going
+10:17
+to get a way higher response rate with
+10:19
+this. And this is how you get your foot
+10:20
+in the door with these companies. You
+10:22
+can take the same format and also do it
+10:24
+with Twitter DMs and LinkedIn DMs. For
+10:27
+Twitter DMs, you can do that with
+10:28
+something like inboxapp.com or
+10:31
+drippy.ai. Just depends on the volume
+10:33
+that you're trying to send. And then for
+10:34
+the LinkedIn DMs, you can use something
+10:35
+like Phantom Buster. All of those are
+10:37
+pretty cheap for the price that they
+10:39
+are. Phantom Buster, you can also send
+10:40
+like a,000 DMs per month for $69. You're
+10:43
+going to make this work. I guarantee it.
+10:44
+You can specialize in making e-commerce
+10:46
+ads for supplement companies. You can
+10:48
+build out these AI automation workflows
+10:50
+in the background to automate your work.
+10:52
+That's how you can run this as a single
+10:53
+person. And then to get customers, you
+10:55
+just show your work in public and reach
+10:57
+out to companies offering your service.
+10:59
+Don't over complicate this. Just do
+Cold Email + DM Tech Stack
+11:01
+simple things consistently. And if you
+11:02
+like this content, sub to this channel.
+11:04
+I make content like this weekly. And if
+11:06
+you have any questions about this,
+11:07
+please comment below. I read every
+11:09
+comment or at least I try to. And if you
+11:11
+don't know what to comment, just comment
+11:13
+AI business idea. It really helps with
+11:15
+the algorithm.
