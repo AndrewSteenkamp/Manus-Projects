@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PricePulse Mobile - Test Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
+    
+    <style>
+        body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior: none;
+        }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        input, select {
+            font-size: 16px;
+        }
+        
+        button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { 
+            Search, Heart, Clock, User, Package, Wrench, 
+            TrendingUp, Filter, Star, MapPin, ExternalLink,
+            Zap, Award, Shield, ChevronRight
+        } = lucideReact;
+
+        const MobileTestApp = () => {
+            const [activeTab, setActiveTab] = useState('search');
+            const [searchQuery, setSearchQuery] = useState('');
+            const [searchType, setSearchType] = useState('products');
+            const [loading, setLoading] = useState(false);
+            const [testResults, setTestResults] = useState(null);
+            const [showFilters, setShowFilters] = useState(false);
+
+            // Mock search function for testing
+            const handleTestSearch = () => {
+                if (!searchQuery.trim()) return;
+                
+                setLoading(true);
+                
+                // Simulate API call
+                setTimeout(() => {
+                    const mockResults = {
+                        query: searchQuery,
+                        total_products: 8,
+                        search_duration_seconds: 2.3,
+                        recommendations: [
+                            `Best overall: ${searchQuery} Pro from Amazon - Highly Recommended`,
+                            `Best value: ${searchQuery} Basic from Temu at $25.99`
+                        ],
+                        products: [
+                            {
+                                title: `${searchQuery} Pro Model`,
+                                platform: 'Amazon',
+                                total_cost: 89.99,
+                                rating: 4.8,
+                                location: 'Ships to your location',
+                                delivery_time: '2-3 days',
+                                recommendation_level: 'Highly Recommended',
+                                savings_amount: 15.00,
+                                affiliate_url: '#'
+                            },
+                            {
+                                title: `${searchQuery} Standard Edition`,
+                                platform: 'eBay',
+                                total_cost: 67.50,
+                                rating: 4.5,
+                                location: 'Local seller',
+                                delivery_time: '3-5 days',
+                                recommendation_level: 'Recommended',
+                                savings_amount: 8.50,
+                                affiliate_url: '#'
+                            },
+                            {
+                                title: `${searchQuery} Budget Option`,
+                                platform: 'Temu',
+                                total_cost: 25.99,
+                                rating: 4.2,
+                                location: 'International',
+                                delivery_time: '7-14 days',
+                                recommendation_level: 'Good Option',
+                                savings_amount: 24.00,
+                                affiliate_url: '#'
+                            }
+                        ]
+                    };
+                    
+                    setTestResults(mockResults);
+                    setLoading(false);
+                }, 1500);
+            };
+
+            const MobileNav = () => (
+                React.createElement('div', {
+                    className: "fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50"
+                },
+                    React.createElement('div', {
+                        className: "flex justify-around py-2"
+                    },
+                        [
+                            { id: 'search', icon: Search, label: 'Search' },
+                            { id: 'favorites', icon: Heart, label: 'Favorites' },
+                            { id: 'recent', icon: Clock, label: 'Recent' },
+                            { id: 'profile', icon: User, label: 'Profile' }
+                        ].map(tab => 
+                            React.createElement('button', {
+                                key: tab.id,
+                                onClick: () => setActiveTab(tab.id),
+                                className: `flex flex-col items-center py-2 px-4 ${
+                                    activeTab === tab.id ? 'text-blue-600' : 'text-gray-500'
+                                }`
+                            },
+                                React.createElement(tab.icon, { className: "h-5 w-5 mb-1" }),
+                                React.createElement('span', { className: "text-xs" }, tab.label)
+                            )
+                        )
+                    )
+                )
+            );
+
+            const SearchHeader = () => (
+                React.createElement('div', {
+                    className: "bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 pb-6"
+                },
+                    React.createElement('div', {
+                        className: "flex items-center justify-between mb-4"
+                    },
+                        React.createElement('div', {
+                            className: "flex items-center space-x-2"
+                        },
+                            React.createElement(TrendingUp, { className: "h-6 w-6" }),
+                            React.createElement('h1', { className: "text-xl font-bold" }, "PricePulse Mobile"),
+                            React.createElement('span', { 
+                                className: "text-xs bg-white/20 px-2 py-1 rounded" 
+                            }, "TEST")
+                        ),
+                        React.createElement('button', {
+                            onClick: () => setShowFilters(!showFilters),
+                            className: "p-2 rounded-full bg-white/20"
+                        },
+                            React.createElement(Filter, { className: "h-5 w-5" })
+                        )
+                    ),
+                    
+                    React.createElement('div', {
+                        className: "flex bg-white/20 rounded-lg p-1 mb-4"
+                    },
+                        React.createElement('button', {
+                            onClick: () => setSearchType('products'),
+                            className: `flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                                searchType === 'products' 
+                                    ? 'bg-white text-blue-600' 
+                                    : 'text-white/80'
+                            }`
+                        },
+                            React.createElement(Package, { className: "h-4 w-4 inline mr-2" }),
+                            "Products"
+                        ),
+                        React.createElement('button', {
+                            onClick: () => setSearchType('services'),
+                            className: `flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                                searchType === 'services' 
+                                    ? 'bg-white text-blue-600' 
+                                    : 'text-white/80'
+                            }`
+                        },
+                            React.createElement(Wrench, { className: "h-4 w-4 inline mr-2" }),
+                            "Services"
+                        )
+                    ),
+                    
+                    React.createElement('div', {
+                        className: "relative"
+                    },
+                        React.createElement('input', {
+                            type: "text",
+                            placeholder: `Search ${searchType}... (TEST MODE)`,
+                            value: searchQuery,
+                            onChange: (e) => setSearchQuery(e.target.value),
+                            onKeyPress: (e) => e.key === 'Enter' && handleTestSearch(),
+                            className: "w-full py-3 px-4 pr-12 rounded-lg text-gray-900 placeholder-gray-500"
+                        }),
+                        React.createElement('button', {
+                            onClick: handleTestSearch,
+                            disabled: loading,
+                            className: "absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-lg"
+                        },
+                            loading ? 
+                                React.createElement('div', {
+                                    className: "animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"
+                                }) :
+                                React.createElement(Search, { className: "h-4 w-4" })
+                        )
+                    ),
+                    
+                    showFilters && React.createElement('div', {
+                        className: "mt-4 bg-white/10 rounded-lg p-4"
+                    },
+                        React.createElement('div', {
+                            className: "text-sm text-white/80"
+                        }, "🧪 Test Mode: Filters will be functional in production")
+                    )
+                )
+            );
+
+            const TestResultCard = ({ item, index }) => (
+                React.createElement('div', {
+                    className: "bg-white rounded-lg shadow-md p-4 mb-4 border border-gray-100"
+                },
+                    React.createElement('div', {
+                        className: "flex justify-between items-start mb-3"
+                    },
+                        React.createElement('div', {
+                            className: "flex-1"
+                        },
+                            React.createElement('div', {
+                                className: "flex items-center space-x-2 mb-2"
+                            },
+                                React.createElement('span', { className: "text-lg" }, 
+                                    item.platform === 'Amazon' ? '🛒' : 
+                                    item.platform === 'eBay' ? '🏪' : '🎁'
+                                ),
+                                React.createElement('span', {
+                                    className: "text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded"
+                                }, item.platform),
+                                React.createElement('span', {
+                                    className: `text-xs px-2 py-1 rounded ${
+                                        item.recommendation_level === 'Highly Recommended' 
+                                            ? 'bg-green-100 text-green-800'
+                                            : item.recommendation_level === 'Recommended'
+                                            ? 'bg-blue-100 text-blue-800'
+                                            : 'bg-yellow-100 text-yellow-800'
+                                    }`
+                                }, item.recommendation_level)
+                            ),
+                            React.createElement('h3', {
+                                className: "font-semibold text-gray-900 mb-2 line-clamp-2"
+                            }, item.title),
+                            React.createElement('div', {
+                                className: "flex items-center space-x-4 text-sm text-gray-600 mb-2"
+                            },
+                                React.createElement('div', {
+                                    className: "flex items-center space-x-1"
+                                },
+                                    React.createElement(Star, {
+                                        className: "h-4 w-4 text-yellow-500 fill-current"
+                                    }),
+                                    React.createElement('span', {}, `${item.rating}/5`)
+                                ),
+                                React.createElement('div', {
+                                    className: "flex items-center space-x-1"
+                                },
+                                    React.createElement(MapPin, { className: "h-4 w-4" }),
+                                    React.createElement('span', {
+                                        className: "truncate"
+                                    }, item.location)
+                                ),
+                                React.createElement('div', {
+                                    className: "flex items-center space-x-1"
+                                },
+                                    React.createElement(Clock, { className: "h-4 w-4" }),
+                                    React.createElement('span', {}, item.delivery_time)
+                                )
+                            )
+                        ),
+                        React.createElement('button', {
+                            className: "p-2 rounded-full text-gray-400"
+                        },
+                            React.createElement(Heart, { className: "h-5 w-5" })
+                        )
+                    ),
+                    
+                    React.createElement('div', {
+                        className: "flex items-center justify-between"
+                    },
+                        React.createElement('div', {},
+                            React.createElement('div', {
+                                className: "text-2xl font-bold text-green-600"
+                            }, `$${item.total_cost}`),
+                            React.createElement('div', {
+                                className: "text-sm text-green-600"
+                            }, `Save $${item.savings_amount.toFixed(2)}`)
+                        ),
+                        React.createElement('button', {
+                            onClick: () => alert('Test mode - would open affiliate link'),
+                            className: "bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-1"
+                        },
+                            React.createElement('span', {}, "View"),
+                            React.createElement(ExternalLink, { className: "h-3 w-3" })
+                        )
+                    )
+                )
+            );
+
+            return React.createElement('div', {
+                className: "min-h-screen bg-gray-50 pb-16"
+            },
+                activeTab === 'search' && React.createElement(SearchHeader),
+                
+                React.createElement('div', {
+                    className: "flex-1"
+                },
+                    activeTab === 'search' && React.createElement('div', {
+                        className: "p-4"
+                    },
+                        testResults ? React.createElement('div', {},
+                            React.createElement('div', {
+                                className: "mb-4 p-3 bg-blue-50 rounded-lg"
+                            },
+                                React.createElement('div', {
+                                    className: "flex items-center justify-between"
+                                },
+                                    React.createElement('div', {},
+                                        React.createElement('h3', {
+                                            className: "font-semibold text-blue-900"
+                                        }, `${testResults.total_products} results found`),
+                                        React.createElement('p', {
+                                            className: "text-sm text-blue-700"
+                                        }, `Search completed in ${testResults.search_duration_seconds}s`)
+                                    ),
+                                    React.createElement(Zap, { className: "h-6 w-6 text-blue-600" })
+                                )
+                            ),
+                            
+                            React.createElement('div', {
+                                className: "mb-4 p-3 bg-green-50 rounded-lg"
+                            },
+                                React.createElement('h4', {
+                                    className: "font-semibold text-green-900 mb-2 flex items-center"
+                                },
+                                    React.createElement(Award, { className: "h-4 w-4 mr-2" }),
+                                    "Smart Recommendations"
+                                ),
+                                React.createElement('div', {
+                                    className: "space-y-1"
+                                },
+                                    testResults.recommendations.map((rec, index) =>
+                                        React.createElement('p', {
+                                            key: index,
+                                            className: "text-sm text-green-800"
+                                        }, `• ${rec}`)
+                                    )
+                                )
+                            ),
+                            
+                            React.createElement('div', {},
+                                testResults.products.map((item, index) =>
+                                    React.createElement(TestResultCard, {
+                                        key: index,
+                                        item: item,
+                                        index: index
+                                    })
+                                )
+                            )
+                        ) : React.createElement('div', {
+                            className: "text-center py-8"
+                        },
+                            React.createElement('div', {
+                                className: "text-6xl mb-4"
+                            }, "🧪"),
+                            React.createElement('h3', {
+                                className: "text-lg font-semibold text-gray-900 mb-2"
+                            }, "PricePulse Mobile Test"),
+                            React.createElement('p', {
+                                className: "text-gray-600 mb-6"
+                            }, "Test the mobile interface with mock data"),
+                            
+                            React.createElement('div', {
+                                className: "grid grid-cols-2 gap-3"
+                            },
+                                ['iPhone 15', 'Laptop', 'Web Design', 'Cleaning'].map((suggestion, index) =>
+                                    React.createElement('button', {
+                                        key: index,
+                                        onClick: () => {
+                                            setSearchQuery(suggestion);
+                                            handleTestSearch();
+                                        },
+                                        className: "p-3 bg-white rounded-lg border border-gray-200 text-sm font-medium"
+                                    }, suggestion)
+                                )
+                            ),
+                            
+                            React.createElement('div', {
+                                className: "mt-6 p-4 bg-yellow-50 rounded-lg"
+                            },
+                                React.createElement('h4', {
+                                    className: "font-semibold text-yellow-900 mb-2"
+                                }, "🧪 Test Mode"),
+                                React.createElement('p', {
+                                    className: "text-sm text-yellow-800"
+                                }, "This is a test version with mock data. The production app will connect to your live API for real product and service comparisons.")
+                            )
+                        )
+                    ),
+                    
+                    activeTab !== 'search' && React.createElement('div', {
+                        className: "p-4 text-center py-16"
+                    },
+                        React.createElement('div', {
+                            className: "text-4xl mb-4"
+                        }, "🚧"),
+                        React.createElement('h3', {
+                            className: "text-lg font-semibold text-gray-900 mb-2"
+                        }, `${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Tab`),
+                        React.createElement('p', {
+                            className: "text-gray-600"
+                        }, "This tab will be fully functional in the production version")
+                    )
+                ),
+                
+                React.createElement(MobileNav)
+            );
+        };
+
+        ReactDOM.render(React.createElement(MobileTestApp), document.getElementById('root'));
+    </script>
+</body>
+</html>
