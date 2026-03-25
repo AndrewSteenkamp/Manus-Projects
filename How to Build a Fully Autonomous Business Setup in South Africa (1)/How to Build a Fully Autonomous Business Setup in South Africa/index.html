@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Business</title>
+    <link rel="stylesheet" href="{{ url_for(\'static\', filename=\'css/style.css\') }}">
+</head>
+<body>
+    <header>
+        <h1>Autonomous Business</h1>
+    </header>
+    <main>
+        <div class="agent-container">
+            <h2>Finance Agent (CFO)</h2>
+            <button onclick="executeTask(\'finance\', \'generate_financial_report\')">Generate Financial Report</button>
+            <button onclick="executeTask(\'finance\', \'process_invoices\')">Process Invoices</button>
+        </div>
+        <div class="agent-container">
+            <h2>Legal Agent (CLO)</h2>
+            <button onclick="executeTask(\'legal\', \'draft_contract\')">Draft Contract</button>
+            <button onclick="executeTask(\'legal\', \'review_nda\')">Review NDA</button>
+        </div>
+        <div class="agent-container">
+            <h2>Operations Agent (COO)</h2>
+            <button onclick="executeTask(\'operations\', \'plan_project\')">Plan Project</button>
+            <button onclick="executeTask(\'operations\', \'allocate_resources\')">Allocate Resources</button>
+        </div>
+        <div id="result-container">
+            <h3>Results:</h3>
+            <p id="result-text"></p>
+        </div>
+    </main>
+    <script>
+        function executeTask(agent, task) {
+            fetch(\'/execute_task\', {
+                method: \'POST\',
+                headers: {
+                    \'Content-Type\': \'application/json\'
+                },
+                body: JSON.stringify({ agent, task })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById(\'result-text\').innerText = data.result || data.error;
+            });
+        }
+    </script>
+</body>
+</html>

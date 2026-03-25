@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Business - AI Command Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .result-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .metric-label {
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .metric-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .input-group {
+            margin: 15px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Autonomous Business AI Command Center</h1>
+            <p class="subtitle"><span class="status-indicator"></span>All AI Agents Operational</p>
+        </div>
+        
+        <div class="grid">
+            <!-- Finance Agent -->
+            <div class="card">
+                <h2>💰 CFO - Finance Agent</h2>
+                <button class="btn" onclick="getFinancialReport()">Generate Financial Report</button>
+                <button class="btn" onclick="analyzeFinances()">AI Financial Analysis</button>
+                
+                <div class="input-group">
+                    <label>Create Invoice</label>
+                    <input type="text" id="invoice-client" placeholder="Client Name">
+                    <input type="number" id="invoice-amount" placeholder="Amount (R)">
+                    <button class="btn" onclick="createInvoice()">Generate Invoice</button>
+                </div>
+                
+                <div class="result-box" id="finance-results">
+                    <p>Financial results will appear here...</p>
+                </div>
+            </div>
+            
+            <!-- Sales Agent -->
+            <div class="card">
+                <h2>📈 CRO - Sales Agent</h2>
+                <button class="btn" onclick="getSalesMetrics()">View Sales Metrics</button>
+                
+                <div class="input-group">
+                    <label>Find Leads</label>
+                    <input type="text" id="niche" placeholder="Niche (e.g., AI automation)">
+                    <button class="btn" onclick="findLeads()">Find Leads with AI</button>
+                </div>
+                
+                <div class="input-group">
+                    <label>Generate Loom Script</label>
+                    <input type="text" id="lead-company" placeholder="Company Name">
+                    <input type="text" id="lead-industry" placeholder="Industry">
+                    <input type="text" id="lead-pain" placeholder="Pain Point">
+                    <button class="btn" onclick="createLoomScript()">Generate Script</button>
+                </div>
+                
+                <div class="result-box" id="sales-results">
+                    <p>Sales results will appear here...</p>
+                </div>
+            </div>
+            
+            <!-- Proposal Generator -->
+            <div class="card">
+                <h2>📝 Proposal Generator</h2>
+                <div class="input-group">
+                    <label>Client Name</label>
+                    <input type="text" id="proposal-client" placeholder="Client Name">
+                </div>
+                <div class="input-group">
+                    <label>Service Type</label>
+                    <input type="text" id="proposal-service" placeholder="e.g., AI Automation">
+                </div>
+                <div class="input-group">
+                    <label>Budget Range</label>
+                    <input type="text" id="proposal-budget" placeholder="e.g., R10,000 - R50,000">
+                </div>
+                <button class="btn" onclick="generateProposal()">Generate AI Proposal</button>
+                
+                <div class="result-box" id="proposal-results">
+                    <p>Proposal will appear here...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- System Status -->
+        <div class="card">
+            <h2>🔧 System Status</h2>
+            <button class="btn" onclick="getSystemStatus()">Refresh Status</button>
+            <div class="result-box" id="system-status">
+                <p>Click refresh to see system status...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function displayResult(elementId, data) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        }
+        
+        async function getFinancialReport() {
+            try {
+                const response = await fetch('/api/finance/report');
+                const data = await response.json();
+                displayResult('finance-results', data);
+            } catch (error) {
+                displayResult('finance-results', {error: error.message});
+            }
+        }
+        
+        async function analyzeFinances() {
+            try {
+                const response = await fetch('/api/finance/analyze');
+                const data = await response.json();
+                displayResult('finance-results', data);
+            } catch (error) {
+                displayResult('finance-results', {error: error.message});
+            }
+        }
+        
+        async function createInvoice() {
+            const client = document.getElementById('invoice-client').value;
+            const amount = parseFloat(document.getElementById('invoice-amount').value);
+            
+            try {
+                const response = await fetch('/api/invoice', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({client, amount})
+                });
+                const data = await response.json();
+                displayResult('finance-results', data);
+            } catch (error) {
+                displayResult('finance-results', {error: error.message});
+            }
+        }
+        
+        async function getSalesMetrics() {
+            try {
+                const response = await fetch('/api/sales/metrics');
+                const data = await response.json();
+                displayResult('sales-results', data);
+            } catch (error) {
+                displayResult('sales-results', {error: error.message});
+            }
+        }
+        
+        async function findLeads() {
+            const niche = document.getElementById('niche').value;
+            
+            try {
+                const response = await fetch('/api/sales/leads', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({niche})
+                });
+                const data = await response.json();
+                displayResult('sales-results', data);
+            } catch (error) {
+                displayResult('sales-results', {error: error.message});
+            }
+        }
+        
+        async function createLoomScript() {
+            const lead = {
+                company: document.getElementById('lead-company').value,
+                industry: document.getElementById('lead-industry').value,
+                pain_point: document.getElementById('lead-pain').value
+            };
+            
+            try {
+                const response = await fetch('/api/sales/loom', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({lead})
+                });
+                const data = await response.json();
+                displayResult('sales-results', data);
+            } catch (error) {
+                displayResult('sales-results', {error: error.message});
+            }
+        }
+        
+        async function generateProposal() {
+            const client = {
+                name: document.getElementById('proposal-client').value,
+                budget: document.getElementById('proposal-budget').value
+            };
+            const service = document.getElementById('proposal-service').value;
+            
+            try {
+                const response = await fetch('/api/sales/proposal', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({client, service})
+                });
+                const data = await response.json();
+                displayResult('proposal-results', data);
+            } catch (error) {
+                displayResult('proposal-results', {error: error.message});
+            }
+        }
+        
+        async function getSystemStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                displayResult('system-status', data);
+            } catch (error) {
+                displayResult('system-status', {error: error.message});
+            }
+        }
+    </script>
+</body>
+</html>
