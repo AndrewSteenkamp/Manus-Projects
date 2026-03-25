@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - AI-Powered UGC Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .error-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            margin: 2rem;
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-title {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            color: #718096;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-details {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #e53e3e;
+            border-left: 4px solid #e53e3e;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #718096;
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 4px 12px rgba(113, 128, 150, 0.4);
+        }
+        
+        .troubleshooting {
+            text-align: left;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .troubleshooting h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .troubleshooting ul {
+            color: #4a5568;
+            padding-left: 1.5rem;
+        }
+        
+        .troubleshooting li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">⚠️</div>
+        <h1 class="error-title">System Error</h1>
+        <p class="error-message">
+            The AI-Powered UGC Agency encountered an error and cannot continue.
+        </p>
+        
+        {% if error %}
+        <div class="error-details">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <div>
+            <a href="/" class="btn">🏠 Return to Dashboard</a>
+            <button onclick="location.reload()" class="btn btn-secondary">🔄 Retry</button>
+        </div>
+        
+        <div class="troubleshooting">
+            <h3>🔧 Troubleshooting Steps</h3>
+            <ul>
+                <li>Check that all required environment variables are set in your <code>.env</code> file</li>
+                <li>Verify your AI provider API key is valid and has sufficient credits</li>
+                <li>Ensure all Python dependencies are installed: <code>pip install -r requirements.txt</code></li>
+                <li>Check the console logs for detailed error information</li>
+                <li>Try switching to a different AI provider in your <code>.env</code> file</li>
+                <li>Restart the application: <code>python web/app.py</code></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        console.error('AI-Powered UGC Agency Error:', '{{ error }}');
+        
+        // Auto-retry after 10 seconds for temporary errors
+        setTimeout(function() {
+            if (confirm('Would you like to automatically retry loading the application?')) {
+                location.reload();
+            }
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "deployment_timestamp": "2025-09-25T03:32:23.972127",
+  "completion_timestamp": "2025-09-25T03:32:46.892638",
+  "duration_seconds": 22.920511,
+  "deployment_log": [
+    "[03:32:23] INFO: Starting AI-Powered UGC Agency deployment...",
+    "[03:32:23] INFO: Step: Python Version Check",
+    "[03:32:23] INFO: Checking Python version...",
+    "[03:32:23] SUCCESS: Python 3.11.0 - Compatible \u2713",
+    "[03:32:23] SUCCESS: \u2705 Python Version Check completed successfully",
+    "[03:32:23] INFO: Step: Install Dependencies",
+    "[03:32:23] INFO: Installing Python dependencies...",
+    "[03:32:43] ERROR: Failed to install dependencies: ERROR: Could not install packages due to an OSError: [Errno 13] Permission denied: '/usr/local/bin/pyrsa-decrypt'\nConsider using the `--user` option or check the permissions.\n\n",
+    "[03:32:43] ERROR: \u274c Install Dependencies failed",
+    "[03:32:43] INFO: Step: Environment Setup",
+    "[03:32:43] INFO: Setting up environment configuration...",
+    "[03:32:43] SUCCESS: .env file created from template",
+    "[03:32:43] WARNING: \u26a0\ufe0f  Please edit .env file with your API keys",
+    "[03:32:43] SUCCESS: Environment configuration complete \u2713",
+    "[03:32:43] SUCCESS: \u2705 Environment Setup completed successfully",
+    "[03:32:43] INFO: Step: Create Directories",
+    "[03:32:43] INFO: Creating project directories...",
+    "[03:32:43] SUCCESS: Project directories created \u2713",
+    "[03:32:43] SUCCESS: \u2705 Create Directories completed successfully",
+    "[03:32:43] INFO: Step: Test System Components",
+    "[03:32:43] INFO: Testing system components...",
+    "[03:32:44] WARNING: AI Helper connection test failed",
+    "[03:32:44] WARNING: Check your API keys in .env file",
+    "[03:32:44] SUCCESS: All agent modules imported successfully \u2713",
+    "[03:32:45] SUCCESS: Web application imported successfully \u2713",
+    "[03:32:45] SUCCESS: \u2705 Test System Components completed successfully",
+    "[03:32:45] INFO: Step: Run Comprehensive Test",
+    "[03:32:45] INFO: Running comprehensive system test...",
+    "[03:32:46] WARNING: System test failed: 64.3% success rate",
+    "[03:32:46] WARNING: Some components may not be fully functional",
+    "[03:32:46] ERROR: \u274c Run Comprehensive Test failed"
+  ],
+  "system_info": {
+    "python_version": "3.11.0",
+    "platform": "linux",
+    "project_root": "/home/ubuntu/ai-ugc-agency-complete"
+  }
+}

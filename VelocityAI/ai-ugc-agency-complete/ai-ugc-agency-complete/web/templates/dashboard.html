@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered UGC Agency - Executive Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: #718096;
+            margin-top: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .card h3 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .metric:last-child {
+            border-bottom: none;
+        }
+        
+        .metric-label {
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .metric-value {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .metric-value.positive {
+            color: #38a169;
+        }
+        
+        .metric-value.negative {
+            color: #e53e3e;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .status-active {
+            background-color: #38a169;
+        }
+        
+        .status-warning {
+            background-color: #d69e2e;
+        }
+        
+        .status-error {
+            background-color: #e53e3e;
+        }
+        
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .agent-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .agent-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+        
+        .agent-role {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .agent-status {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .timestamp {
+            color: #718096;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #718096;
+        }
+        
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header {
+                padding: 1rem;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI-Powered UGC Advertising Agency</h1>
+        <p>Executive Dashboard - Autonomous Operations Control Center</p>
+    </div>
+    
+    <div class="container">
+        {% if data.company_status == "ERROR" %}
+        <div class="error">
+            <strong>System Error:</strong> {{ data.error }}
+        </div>
+        {% else %}
+        
+        <!-- Key Performance Indicators -->
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>📊 Financial Performance</h3>
+                <div class="metric">
+                    <span class="metric-label">Monthly Revenue</span>
+                    <span class="metric-value positive">${{ "{:,}".format(data.financial_report.executive_summary.revenue) }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Net Profit</span>
+                    <span class="metric-value positive">${{ "{:,}".format(data.financial_report.executive_summary.net_profit) }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Profit Margin</span>
+                    <span class="metric-value {{ 'positive' if data.financial_report.executive_summary.profit_margin > 80 else 'negative' }}">{{ "%.1f"|format(data.financial_report.executive_summary.profit_margin) }}%</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Performance Status</span>
+                    <span class="metric-value">
+                        <span class="status-indicator {{ 'status-active' if data.financial_report.executive_summary.performance_status == 'STRONG' else 'status-warning' }}"></span>
+                        {{ data.financial_report.executive_summary.performance_status }}
+                    </span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>📈 Sales Performance</h3>
+                <div class="metric">
+                    <span class="metric-label">Total Leads</span>
+                    <span class="metric-value">{{ data.sales_dashboard.total_leads }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Qualified Leads</span>
+                    <span class="metric-value">{{ data.sales_dashboard.qualified_leads }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Proposals Pending</span>
+                    <span class="metric-value">{{ data.sales_dashboard.proposals_pending }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Monthly Progress</span>
+                    <span class="metric-value positive">${{ "{:,}".format(data.sales_dashboard.monthly_progress) }}</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🎨 Creative Production</h3>
+                <div class="metric">
+                    <span class="metric-label">Videos Created</span>
+                    <span class="metric-value">{{ data.creative_dashboard.creative_metrics.videos_created }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Active Projects</span>
+                    <span class="metric-value">{{ data.creative_dashboard.active_projects }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Scripts Generated</span>
+                    <span class="metric-value">{{ data.creative_dashboard.creative_metrics.scripts_generated }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Content Library</span>
+                    <span class="metric-value">{{ data.creative_dashboard.content_library_size }} items</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🎯 Strategic Overview</h3>
+                <div class="metric">
+                    <span class="metric-label">Company Status</span>
+                    <span class="metric-value">
+                        <span class="status-indicator status-active"></span>
+                        {{ data.company_status }}
+                    </span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">AI Provider</span>
+                    <span class="metric-value">{{ data.ai_provider.title() }}</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">System Health</span>
+                    <span class="metric-value">
+                        <span class="status-indicator status-active"></span>
+                        {{ data.system_health }}
+                    </span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Decisions Made</span>
+                    <span class="metric-value">{{ data.ceo_dashboard.decision_count }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Agents Status -->
+        <div class="card">
+            <h3>🤖 AI Agents Status</h3>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-name">Alexandra Sterling</div>
+                    <div class="agent-role">Chief Executive Officer</div>
+                    <div class="agent-status">
+                        <span class="status-indicator status-active"></span>
+                        Strategic Leadership Active
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-name">Marcus Chen</div>
+                    <div class="agent-role">Chief Financial Officer</div>
+                    <div class="agent-status">
+                        <span class="status-indicator status-active"></span>
+                        Financial Management Active
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-name">Sarah Rodriguez</div>
+                    <div class="agent-role">Head of Sales</div>
+                    <div class="agent-status">
+                        <span class="status-indicator status-active"></span>
+                        Lead Generation Active
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-name">Maya Thompson</div>
+                    <div class="agent-role">Creative Director</div>
+                    <div class="agent-status">
+                        <span class="status-indicator status-active"></span>
+                        Content Creation Active
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="actions">
+            <button class="btn" onclick="refreshDashboard()">🔄 Refresh Dashboard</button>
+            <button class="btn" onclick="generateReport()">📊 Generate Report</button>
+            <button class="btn" onclick="processNewClient()">👥 New Client</button>
+            <button class="btn" onclick="createVideo()">🎬 Create Video</button>
+        </div>
+        
+        <div class="timestamp">
+            Last updated: {{ data.timestamp }}
+        </div>
+        
+        {% endif %}
+    </div>
+    
+    <script>
+        // Auto-refresh dashboard every 30 seconds
+        setInterval(refreshDashboard, 30000);
+        
+        function refreshDashboard() {
+            location.reload();
+        }
+        
+        function generateReport() {
+            window.open('/api/financial/report', '_blank');
+        }
+        
+        function processNewClient() {
+            const clientData = {
+                company_name: prompt("Enter company name:"),
+                product_name: prompt("Enter product name:"),
+                industry: prompt("Enter industry:"),
+                target_audience: prompt("Enter target audience:")
+            };
+            
+            if (clientData.company_name && clientData.product_name) {
+                fetch('/api/client/new', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(clientData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(`Client processing result: ${data.status}`);
+                    if (data.status === 'APPROVED') {
+                        refreshDashboard();
+                    }
+                })
+                .catch(error => {
+                    alert(`Error: ${error.message}`);
+                });
+            }
+        }
+        
+        function createVideo() {
+            const projectData = {
+                client_name: prompt("Enter client name:"),
+                product_name: prompt("Enter product name:"),
+                video_count: parseInt(prompt("Enter number of videos (1-10):")) || 3
+            };
+            
+            if (projectData.client_name && projectData.product_name) {
+                fetch('/api/generate/video', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(projectData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(`Video package created: ${data.id}`);
+                    refreshDashboard();
+                })
+                .catch(error => {
+                    alert(`Error: ${error.message}`);
+                });
+            }
+        }
+        
+        // Show loading state
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 AI-Powered UGC Agency Dashboard Loaded');
+            console.log('📊 Real-time autonomous operations monitoring active');
+        });
+    </script>
+</body>
+</html>
