@@ -1,0 +1,49 @@
+  {
+    "product_name": "iPhone 16 Pro Premium Shield Case",
+    "product_details": {
+      "category": "electronics",
+      "description": "Premium protection case with Camera Control compatibility, MagSafe ready, drop protection",
+      "price": "$24.99",
+      "original_price": "$39.99",
+      "features": [
+        "Camera Control Compatible",
+        "MagSafe Ready",
+        "Drop Protection"
+      ],
+      "target_audience": "iPhone 16 Pro users",
+      "pain_points": [
+        "expensive phone needs protection",
+        "camera button accessibility",
+        "wireless charging compatibility"
+      ]
+    },
+    "scripts": {
+      "problem_solution": "Error generating script: Error code: 400 - {'error': 'Unsupported model. Only the following models are allowed: gemini-2.5-flash, gpt-4.1-mini, gpt-4.1-nano'}",
+      "before_after": "Error generating script: Error code: 400 - {'error': 'Unsupported model. Only the following models are allowed: gemini-2.5-flash, gpt-4.1-mini, gpt-4.1-nano'}",
+      "unboxing_review": "Error generating script: Error code: 400 - {'error': 'Unsupported model. Only the following models are allowed: gemini-2.5-flash, gpt-4.1-mini, gpt-4.1-nano'}",
+      "lifestyle_integration": "Error generating script: Error code: 400 - {'error': 'Unsupported model. Only the following models are allowed: gemini-2.5-flash, gpt-4.1-mini, gpt-4.1-nano'}"
+    },
+    "visual_concept": "\n        VISUAL CONCEPT for iPhone 16 Pro Premium Shield Case:\n        \n        Setting: Modern, clean background (home office or bedroom)\n        Lighting: Natural lighting or ring light for clear visibility\n        Props: iPhone 16 Pro Premium Shield Case, smartphone, clean surface\n        \n        Shot Sequence:\n        1. Close-up of creator speaking to camera (hook)\n        2. Product showcase - hands holding/demonstrating\n        3. Feature demonstration (specific to Camera Control Compatible, MagSafe Ready, Drop Protection)\n        4. Before/after comparison if applicable\n        5. Final product shot with Alpapies branding\n        \n        Creator Profile:\n        - Age: 25-35\n        - Style: Casual, relatable\n        - Tone: Enthusiastic but authentic\n        - Setting: Personal space (not studio)\n        ",
+    "technical_specs": {
+      "duration": "45-60 seconds",
+      "format": "Vertical (9:16) for TikTok/Instagram",
+      "resolution": "1080x1920",
+      "frame_rate": "30fps"
+    },
+    "platform_variations": {
+      "TikTok": "Focus on trending sounds, quick cuts, younger audience",
+      "Instagram Reels": "Aesthetic visuals, lifestyle integration",
+      "Facebook": "Longer form, more detailed explanation",
+      "YouTube Shorts": "Educational angle, feature breakdown"
+    }
+  },
+  {
+    "product_name": "Samsung Galaxy S25 Ultra Wireless Charger",
+    "product_details": {
+      "category": "electronics",
+      "description": "15W fast wireless charger with Qi compatibility and LED indicator",
+      "price": "$29.99",
+      "original_price": "$49.99",
+      "features": [
+        "15W Fast Charging",
+        "Qi Compatible",

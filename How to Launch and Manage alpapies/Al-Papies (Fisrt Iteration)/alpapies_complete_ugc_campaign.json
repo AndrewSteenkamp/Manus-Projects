@@ -1,0 +1,130 @@
+{
+  "campaign_name": "Alpapies UGC Video Ad Campaign",
+  "campaign_overview": {
+    "objective": "Create authentic UGC-style video ads for Alpapies phone accessories",
+    "target_audience": "Smartphone users aged 18-45",
+    "key_messaging": [
+      "Premium quality from 1688.com suppliers",
+      "Same suppliers as Temu/Shein but with quality guarantee",
+      "Significant savings vs retail prices",
+      "Latest phone compatibility (iPhone 16, Galaxy S25)"
+    ],
+    "platforms": [
+      "TikTok",
+      "Instagram Reels",
+      "Facebook",
+      "YouTube Shorts"
+    ],
+    "total_videos": 18
+  },
+  "products": {
+    "iPhone 16 Pro Premium Shield Case": {
+      "product_details": {
+        "price": "$24.99",
+        "original_price": "$39.99",
+        "discount": "38% OFF",
+        "features": [
+          "Camera Control Compatible",
+          "MagSafe Ready",
+          "Drop Protection"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: iPhone 16 Pro Case - Problem/Solution\n\nHOOK: \"I was SO stressed about protecting my new iPhone 16 Pro...\"\n\nPROBLEM: \"I just spent $1,200 on this phone and I was terrified of dropping it. Plus, I needed something that wouldn't block the new Camera Control button - most cases I found either didn't fit right or cost like $60!\"\n\nDISCOVERY: \"Then I found this Premium Shield Case from Alpapies for only $24.99...\"\n\nSOLUTION: \"Now I have full protection, the Camera Control works perfectly, and my MagSafe charger still connects! I've dropped it twice already and not even a scratch!\"\n\nVALUE: \"And get this - it was originally $39.99 but Alpapies sources directly from 1688.com (same suppliers as Temu!) so I got it for 38% off!\"\n\nCTA: \"Check out Alpapies.com - they have all the latest iPhone 16 accessories with premium quality at amazing prices!\"\n\n[Duration: 45 seconds]\n                ",
+        "unboxing_review": "\n\ud83c\udfac SCRIPT: iPhone 16 Pro Case - Unboxing Review\n\nHOOK: \"Unboxing this iPhone 16 Pro case from Alpapies...\"\n\nFIRST IMPRESSION: \"Okay, the packaging actually looks really premium - not what I expected for $24.99!\"\n\nTESTING: \"Let me test the Camera Control button... *click click* - wow, it's so responsive! And the MagSafe... *snap* - perfect alignment!\"\n\nCOMPARISON: \"I was looking at Apple's case for $59, but this has the same features for literally half the price!\"\n\nFEATURES: \"It's got 9H drop protection, perfect cutouts, and this matte finish feels amazing in hand.\"\n\nVALUE: \"Only $24.99 instead of $39.99 - that's because Alpapies sources from 1688.com, the same suppliers that Temu uses!\"\n\nCTA: \"Definitely check out Alpapies.com if you need iPhone 16 accessories - quality is insane for the price!\"\n\n[Duration: 50 seconds]\n                ",
+        "lifestyle_integration": "\n\ud83c\udfac SCRIPT: iPhone 16 Pro Case - Lifestyle\n\nHOOK: \"How this $25 case changed my daily phone routine...\"\n\nSCENARIO: \"Every morning I grab my phone, wallet, and keys. Before, I was always paranoid about dropping my phone.\"\n\nBENEFIT: \"Now with this Alpapies case, I can actually use my phone normally! The Camera Control works perfectly for quick photos, and I don't stress about drops.\"\n\nFEATURES: \"The MagSafe compatibility means I just slap it on my car mount or wireless charger - no fumbling with cables.\"\n\nSOCIAL PROOF: \"My friends keep asking where I got it because it looks way more expensive than $25!\"\n\nVALUE: \"Alpapies sources directly from 1688.com manufacturers, so you get premium quality without the markup.\"\n\nCTA: \"Get yours at Alpapies.com - they have all the latest phone accessories!\"\n\n[Duration: 40 seconds]\n                "
+      }
+    },
+    "Samsung Galaxy S25 Ultra Wireless Charger": {
+      "product_details": {
+        "price": "$29.99",
+        "original_price": "$49.99",
+        "discount": "40% OFF",
+        "features": [
+          "15W Fast Charging",
+          "Qi Compatible",
+          "LED Indicator"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: Wireless Charger - Problem/Solution\n\nHOOK: \"I was so tired of cable clutter on my nightstand...\"\n\nPROBLEM: \"My Galaxy S25 Ultra came with this tiny cable, and I was constantly plugging and unplugging it. Plus, the cable kept falling behind my bed!\"\n\nDISCOVERY: \"Then I got this 15W wireless charger from Alpapies for $29.99...\"\n\nSOLUTION: \"Now I just drop my phone on it and it charges super fast! The LED indicator shows me it's working, and my nightstand looks so clean.\"\n\nFEATURES: \"It's Qi compatible so it works with my phone case, and the 15W charging is actually faster than I expected!\"\n\nVALUE: \"Originally $49.99 but Alpapies gets these from 1688.com suppliers - same quality, way better price!\"\n\nCTA: \"Check out Alpapies.com for more wireless charging solutions!\"\n\n[Duration: 45 seconds]\n                ",
+        "before_after": "\n\ud83c\udfac SCRIPT: Wireless Charger - Before/After\n\nHOOK: \"Before vs After getting this wireless charger...\"\n\nBEFORE: \"My desk was a mess of cables, I was always searching for my charger, and my phone would die at the worst times.\"\n\nAFTER: \"Now I have this clean setup where I just place my Galaxy S25 on the charger. The LED shows it's working, and I never have a dead phone!\"\n\nFEATURES: \"15W fast charging means it's not slow like old wireless chargers, and it works through my case perfectly.\"\n\nVALUE: \"Only $29.99 instead of $49.99 - 40% off because Alpapies sources directly from 1688.com!\"\n\nCONVENIENCE: \"Best part? No more wear on my charging port from constantly plugging in cables.\"\n\nCTA: \"Get yours at Alpapies.com - they have wireless chargers for every phone!\"\n\n[Duration: 40 seconds]\n                "
+      }
+    },
+    "Universal Tempered Glass Screen Protector": {
+      "product_details": {
+        "price": "$12.99",
+        "original_price": "$24.99",
+        "discount": "48% OFF",
+        "features": [
+          "9H Hardness",
+          "Bubble-Free",
+          "Easy Install"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: Screen Protector - Problem/Solution\n\nHOOK: \"I cracked my last phone screen and it cost $300 to fix...\"\n\nPROBLEM: \"I swore I'd never go without a screen protector again, but every one I tried either had bubbles, felt weird, or was super expensive.\"\n\nDISCOVERY: \"Then I found these tempered glass protectors from Alpapies for only $12.99...\"\n\nSOLUTION: \"Installation was actually easy - no bubbles! And the 9H hardness means I've dropped my phone multiple times with zero damage.\"\n\nFEATURES: \"It feels just like the original screen, no loss in touch sensitivity, and it's crystal clear.\"\n\nVALUE: \"Was $24.99 but Alpapies sources from 1688.com so I got it for 48% off!\"\n\nCTA: \"Don't risk a cracked screen - get yours at Alpapies.com!\"\n\n[Duration: 40 seconds]\n                ",
+        "installation_demo": "\n\ud83c\udfac SCRIPT: Screen Protector - Installation Demo\n\nHOOK: \"Installing a screen protector without bubbles...\"\n\nSETUP: \"Okay, so I got this tempered glass protector from Alpapies. Let me show you how easy this is.\"\n\nPROCESS: \"Clean the screen, align it carefully... and press down. Look at that - no bubbles at all!\"\n\nTESTING: \"Let me test the touch sensitivity... perfect! And you can barely tell it's there.\"\n\nQUALITY: \"This 9H hardness means it's basically like having a second screen protecting your real screen.\"\n\nVALUE: \"Only $12.99 instead of $24.99 - Alpapies gets these from the same 1688.com suppliers as major brands!\"\n\nCTA: \"Save your screen and your wallet at Alpapies.com!\"\n\n[Duration: 35 seconds]\n                "
+      }
+    },
+    "20000mAh Fast Charging Power Bank": {
+      "product_details": {
+        "price": "$34.99",
+        "original_price": "$59.99",
+        "discount": "42% OFF",
+        "features": [
+          "USB-C PD",
+          "Wireless Charging",
+          "Digital Display"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: Power Bank - Problem/Solution\n\nHOOK: \"My phone died during a 12-hour flight...\"\n\nPROBLEM: \"I was stuck with no entertainment, couldn't check my boarding pass, and felt completely disconnected. I needed a power bank that could handle multiple charges.\"\n\nDISCOVERY: \"Found this 20000mAh power bank from Alpapies for $34.99...\"\n\nSOLUTION: \"This thing charges my phone 4-5 times! Plus it has wireless charging so I can charge my earbuds too. The digital display shows exactly how much power is left.\"\n\nFEATURES: \"USB-C PD means it charges my laptop too, and it's way smaller than I expected for 20000mAh.\"\n\nVALUE: \"Was $59.99 but Alpapies sources from 1688.com manufacturers - same quality, better price!\"\n\nCTA: \"Never have a dead device again - check out Alpapies.com!\"\n\n[Duration: 45 seconds]\n                "
+      }
+    },
+    "Magnetic Car Mount with Wireless Charging": {
+      "product_details": {
+        "price": "$19.99",
+        "original_price": "$34.99",
+        "discount": "43% OFF",
+        "features": [
+          "360\u00b0 Rotation",
+          "One-Hand Operation",
+          "Strong Magnet"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: Car Mount - Problem/Solution\n\nHOOK: \"I was using GPS and my phone kept falling...\"\n\nPROBLEM: \"My old car mount was flimsy, my phone would slide out during turns, and the battery would die during long drives.\"\n\nDISCOVERY: \"Got this magnetic car mount with wireless charging from Alpapies for $19.99...\"\n\nSOLUTION: \"Now my phone snaps on instantly, charges while I drive, and the 360\u00b0 rotation means perfect viewing angle. One-hand operation is a game changer!\"\n\nFEATURES: \"The magnet is super strong - I've hit speed bumps and it doesn't budge. Plus wireless charging means no cables!\"\n\nVALUE: \"Was $34.99 but Alpapies sources from 1688.com - 43% off for the same quality!\"\n\nCTA: \"Make driving safer and easier - get yours at Alpapies.com!\"\n\n[Duration: 40 seconds]\n                "
+      }
+    },
+    "Premium Bluetooth Earbuds": {
+      "product_details": {
+        "price": "$39.99",
+        "original_price": "$79.99",
+        "discount": "50% OFF",
+        "features": [
+          "ANC Technology",
+          "30H Battery",
+          "IPX7 Waterproof"
+        ]
+      },
+      "scripts": {
+        "problem_solution": "\n\ud83c\udfac SCRIPT: Bluetooth Earbuds - Problem/Solution\n\nHOOK: \"I was spending $200+ on earbuds that kept breaking...\"\n\nPROBLEM: \"Either the battery died quickly, they weren't waterproof for workouts, or the noise cancellation was terrible. I was tired of overpaying for mediocre quality.\"\n\nDISCOVERY: \"Found these premium earbuds from Alpapies for only $39.99...\"\n\nSOLUTION: \"The ANC actually blocks out my noisy office, 30-hour battery lasts all week, and they survived my sweaty workouts thanks to IPX7 waterproof rating!\"\n\nFEATURES: \"Sound quality rivals my old $200 pair, and the case is so compact it fits in my pocket.\"\n\nVALUE: \"Was $79.99 but Alpapies sources from 1688.com manufacturers - 50% off for premium quality!\"\n\nCTA: \"Upgrade your audio experience at Alpapies.com!\"\n\n[Duration: 45 seconds]\n                "
+      }
+    }
+  },
+  "production_notes": {
+    "creator_profile": "Age 25-35, casual style, authentic tone",
+    "setting": "Personal space (bedroom, home office, car)",
+    "lighting": "Natural or ring light",
+    "duration": "30-60 seconds per video",
+    "format": "Vertical 9:16 for mobile platforms"
+  },
+  "next_steps": [
+    "Select top 3 products for initial video production",
+    "Source UGC creators or use AI avatar generation",
+    "Create videos using MakeUGC.ai or similar platform",
+    "A/B test different script variations",
+    "Track performance and optimize based on results"
+  ]
+}
