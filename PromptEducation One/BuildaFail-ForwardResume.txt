@@ -1,0 +1,121 @@
+Build a Fail-Forward Resume
+
+# Build a Fail-Forward Resume
+
+<aside>
+💡 Create a transformative "Failure Resume" with this mega-prompt for ChatGPT, crafted by a career coach to help you reframe setbacks as opportunities for growth. This template guides you to reflect deeply, extract key lessons, and set actionable future goals.
+
+</aside>
+
+---
+
+## ⚙️ What This Mega-Prompt Delivers:
+
+● Guides you step-by-step in documenting and reflecting on professional setbacks.
+
+● Helps you extract key lessons and turn them into powerful drivers for personal and career growth.
+
+● Offers a structured, growth-oriented framework to apply insights to your future ambitions.
+
+## 💡 Tips:
+
+● Be specific and candid in describing your failure—greater detail leads to more meaningful lessons.
+
+● Link each lesson to a concrete aspect of the failure for a stronger, actionable connection.
+
+● When planning next steps, use the SMART framework (Specific, Measurable, Achievable, Relevant, Time-bound) to maximize real-world impact.
+
+## 📝 Failure Reflection Resume ChatGPT Mega Prompt
+
+```html
+#CONTEXT:
+You are a career coach guiding a professional to turn setbacks into learning opportunities for growth. Create a comprehensive "Failure Resume" template that leads users to reflect on past failures, extract valuable lessons, and set actionable goals for the future.
+
+#ROLE:
+Adopt the perspective of a growth-focused career coach with expertise in reframing setbacks for professional and personal development.
+
+#RESPONSE GUIDELINES:
+Structure the "Failure Resume" into the following sections:
+
+1. **Failure Experience**
+   - Detailed description of the failure
+   - Initial impact on thoughts, emotions, and actions
+
+2. **Lessons Learned**
+   - Key realization or lesson 1
+   - Key realization or lesson 2
+   - Key realization or lesson 3
+
+3. **Application to Future**
+   - Specific future goal 1
+     - How the lessons will be applied
+     - Concrete steps to take
+   - Specific future goal 2
+     - How the lessons will be applied
+     - Concrete steps to take
+   - Specific future goal 3
+     - How the lessons will be applied
+     - Concrete steps to take
+
+4. **Reflection Prompts**
+   - Thought-provoking question 1 to encourage a growth mindset
+   - Thought-provoking question 2 to encourage a growth mindset
+   - Thought-provoking question 3 to encourage a growth mindset
+
+#TASK CRITERIA:
+- Promote deep introspection and a focus on growth.
+- Use thoughtful prompts to drive meaningful reflection and learning.
+- Emphasize turning lessons into actionable steps for future goals.
+- Keep the focus positive and constructive—growth over regret.
+
+#INFORMATION ABOUT ME:
+- My specific failure experience: [DESCRIBE YOUR FAILURE EXPERIENCE]
+- My key lessons learned: [LIST YOUR KEY LESSONS LEARNED]
+- My future goals: [DESCRIBE YOUR FUTURE GOALS]
+
+#RESPONSE FORMAT:
+**Failure Experience**
+- [Detailed description]
+- [Initial impact]
+
+**Lessons Learned**
+- [Key lesson 1]
+- [Key lesson 2]
+- [Key lesson 3]
+
+**Application to Future**
+- **Goal 1:** [Future goal description]
+  - Application: [How lessons will be applied]
+  - Steps: [Action steps]
+- **Goal 2:** [Future goal description]
+  - Application: [How lessons will be applied]
+  - Steps: [Action steps]
+- **Goal 3:** [Future goal description]
+  - Application: [How lessons will be applied]
+  - Steps: [Action steps]
+
+**Reflection Prompts**
+- [Question 1]
+- [Question 2]
+- [Question 3]
+```
+
+## ❓How To Use The Prompt:
+
+● Fill in `[DESCRIBE YOUR FAILURE EXPERIENCE]`, `[LIST YOUR KEY LESSONS LEARNED]`, and `[DESCRIBE YOUR FUTURE GOALS]` with your story and ambitions.
+
+*Example Input:*
+
+- My specific failure experience: **Invested in a marketing campaign that missed the target audience, resulting in low ROI and wasted resources.**
+- My key lessons learned: **The need for audience research, adaptability in strategy, and importance of ongoing feedback.**
+- My future goals: **Craft data-driven marketing plans, continuously gather customer insights, and create flexible campaign strategies.**
+
+---
+
+## 💡 Extra Tips:
+
+● Break big future goals into small steps so progress feels achievable.
+
+● Return to your Failure Resume periodically—add new lessons as your career evolves.
+
+● Treat this as a living document for growth, not a record of regret!
